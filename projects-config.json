@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "id": "tailormed-2026",
+      "name": "TailorMed 2026",
+      "description": "專業冷鏈物流公司首頁線框圖",
+      "path": "Projects/TailorMed-2026",
+      "previewPath": "/Projects/TailorMed-2026/dist/index.html",
+      "tech": ["Pug", "Stylus"],
+      "type": "企業網站",
+      "status": "active",
+      "features": ["響應式設計", "現代化 UI", "冷鏈專業", "合規展示"],
+      "lastUpdated": "今天"
+    },
+    {
+      "id": "ynenergy",
+      "name": "YnEnergy",
+      "description": "綠色能源解決方案官方網站",
+      "path": "Projects/ynenergy",
+      "previewPath": "/Projects/ynenergy/dist/index.html",
+      "tech": ["Pug", "Stylus"],
+      "type": "能源網站",
+      "status": "active",
+      "features": ["草綠色主題", "響應式設計", "能源解決方案", "聯絡表單"],
+      "lastUpdated": "今天"
+    }
+  ]
+}

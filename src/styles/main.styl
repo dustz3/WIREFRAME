@@ -1,0 +1,535 @@
+// Website Wireframe Dashboard Styles
+// 使用現代化的設計系統
+
+// Variables
+primary-color = #2563EB
+secondary-color = #64748B
+success-color = #10B981
+warning-color = #F59E0B
+error-color = #EF4444
+info-color = #3B82F6
+
+text-primary = #0F172A
+text-secondary = #64748B
+text-muted = #94A3B8
+
+bg-primary = #FFFFFF
+bg-secondary = #F8FAFC
+bg-tertiary = #F1F5F9
+
+border-color = #E2E8F0
+border-radius = 12px
+border-radius-lg = 16px
+
+shadow-sm = 0 1px 2px 0 rgba(0, 0, 0, 0.05)
+shadow-md = 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
+shadow-lg = 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
+shadow-xl = 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)
+
+// Typography
+font-family = 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+font-size-xs = 0.75rem
+font-size-sm = 0.875rem
+font-size-base = 1rem
+font-size-lg = 1.125rem
+font-size-xl = 1.25rem
+font-size-2xl = 1.5rem
+font-size-3xl = 1.875rem
+font-size-4xl = 2.25rem
+
+// Spacing
+spacing-1 = 0.25rem
+spacing-2 = 0.5rem
+spacing-3 = 0.75rem
+spacing-4 = 1rem
+spacing-5 = 1.25rem
+spacing-6 = 1.5rem
+spacing-8 = 2rem
+spacing-10 = 2.5rem
+spacing-12 = 3rem
+spacing-16 = 4rem
+spacing-20 = 5rem
+
+// Reset and Base Styles
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+
+html
+  font-size 16px
+  line-height 1.5
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+body
+  font-family font-family
+  font-size font-size-base
+  color text-primary
+  background-color bg-secondary
+  line-height 1.6
+
+// Container
+.container
+  max-width 1200px
+  margin 0 auto
+  padding 0 spacing-6
+
+// Buttons
+.btn
+  display inline-flex
+  align-items center
+  justify-content center
+  gap spacing-2
+  padding spacing-3 spacing-6
+  border none
+  border-radius border-radius
+  font-family font-family
+  font-size font-size-sm
+  font-weight 500
+  text-decoration none
+  cursor pointer
+  transition all 0.2s ease
+  white-space nowrap
+  
+  &:disabled
+    opacity 0.6
+    cursor not-allowed
+  
+  &--primary
+    background-color primary-color
+    color white
+    
+    &:hover:not(:disabled)
+      background-color darken(primary-color, 10%)
+      transform translateY(-1px)
+      box-shadow shadow-lg
+  
+  &--secondary
+    background-color white
+    color text-primary
+    border 1px solid border-color
+    
+    &:hover:not(:disabled)
+      background-color bg-tertiary
+      border-color darken(border-color, 10%)
+      transform translateY(-1px)
+      box-shadow shadow-md
+  
+  &--outline
+    background-color transparent
+    color primary-color
+    border 1px solid primary-color
+    
+    &:hover:not(:disabled)
+      background-color primary-color
+      color white
+      transform translateY(-1px)
+      box-shadow shadow-md
+  
+  &--large
+    padding spacing-4 spacing-8
+    font-size font-size-lg
+
+// Header
+.dashboard-header
+  background-color bg-primary
+  border-bottom 1px solid border-color
+  padding spacing-6 0
+  position sticky
+  top 0
+  z-index 100
+  box-shadow shadow-sm
+
+.header-content
+  display flex
+  align-items center
+  justify-content space-between
+
+.header-logo
+  display flex
+  align-items center
+  gap spacing-3
+
+.logo-text
+  font-size font-size-xl
+  font-weight 600
+  color text-primary
+
+.header-actions
+  display flex
+  align-items center
+  gap spacing-3
+
+// Main Content
+.dashboard-main
+  padding spacing-8 0
+
+// Stats Section
+.stats-section
+  margin-bottom spacing-12
+
+.stats-grid
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(250px, 1fr))
+  gap spacing-6
+
+.stat-card
+  background-color bg-primary
+  padding spacing-6
+  border-radius border-radius-lg
+  box-shadow shadow-md
+  display flex
+  align-items center
+  gap spacing-4
+  transition transform 0.2s ease
+  
+  &:hover
+    transform translateY(-2px)
+    box-shadow shadow-lg
+
+.stat-icon
+  width 48px
+  height 48px
+  background-color rgba(primary-color, 0.1)
+  border-radius border-radius
+  display flex
+  align-items center
+  justify-content center
+  color primary-color
+
+.stat-content
+  flex 1
+
+.stat-number
+  font-size font-size-2xl
+  font-weight 700
+  color text-primary
+  margin-bottom spacing-1
+
+.stat-label
+  font-size font-size-sm
+  color text-secondary
+
+// Sections
+.section-header
+  margin-bottom spacing-8
+  text-align center
+
+.section-title
+  font-size font-size-3xl
+  font-weight 700
+  color text-primary
+  margin-bottom spacing-3
+
+.section-subtitle
+  font-size font-size-lg
+  color text-secondary
+  max-width 600px
+  margin 0 auto
+
+// Projects Section
+.projects-section
+  margin-bottom spacing-16
+
+.projects-grid
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(350px, 1fr))
+  gap spacing-6
+
+.project-card
+  background-color bg-primary
+  border-radius border-radius-lg
+  box-shadow shadow-md
+  overflow hidden
+  transition all 0.3s ease
+  
+  &:hover
+    transform translateY(-4px)
+    box-shadow shadow-xl
+
+.project-header
+  padding spacing-6
+  display flex
+  align-items center
+  gap spacing-4
+  border-bottom 1px solid border-color
+
+.project-logo
+  width 48px
+  height 48px
+  background-color rgba(primary-color, 0.1)
+  border-radius border-radius
+  display flex
+  align-items center
+  justify-content center
+  color primary-color
+
+.project-info
+  flex 1
+
+.project-title
+  font-size font-size-xl
+  font-weight 600
+  color text-primary
+  margin-bottom spacing-1
+
+.project-description
+  font-size font-size-sm
+  color text-secondary
+
+.project-status
+  .status-badge
+    padding spacing-2 spacing-4
+    border-radius border-radius
+    font-size font-size-xs
+    font-weight 500
+    text-transform uppercase
+    letter-spacing 0.05em
+    
+    &.status--active
+      background-color rgba(success-color, 0.1)
+      color success-color
+
+.project-details
+  padding spacing-6
+
+.project-meta
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(150px, 1fr))
+  gap spacing-4
+  margin-bottom spacing-6
+
+.meta-item
+  .meta-label
+    font-size font-size-xs
+    font-weight 500
+    color text-muted
+    text-transform uppercase
+    letter-spacing 0.05em
+    margin-bottom spacing-1
+  
+  .meta-value
+    font-size font-size-sm
+    font-weight 500
+    color text-primary
+
+.project-features
+  display flex
+  flex-wrap wrap
+  gap spacing-2
+  margin-bottom spacing-6
+
+.feature-tag
+  padding spacing-1 spacing-3
+  background-color rgba(primary-color, 0.1)
+  color primary-color
+  border-radius border-radius
+  font-size font-size-xs
+  font-weight 500
+
+.project-actions
+  padding spacing-6
+  background-color bg-secondary
+  display flex
+  gap spacing-3
+
+// Actions Section
+.actions-section
+  margin-bottom spacing-16
+
+.actions-grid
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+  gap spacing-6
+
+.action-card
+  background-color bg-primary
+  padding spacing-6
+  border-radius border-radius-lg
+  box-shadow shadow-md
+  text-align center
+  transition all 0.3s ease
+  
+  &:hover
+    transform translateY(-4px)
+    box-shadow shadow-lg
+
+.action-icon
+  width 64px
+  height 64px
+  margin 0 auto spacing-4
+  display flex
+  align-items center
+  justify-content center
+
+.action-content
+  margin-bottom spacing-6
+
+.action-title
+  font-size font-size-xl
+  font-weight 600
+  color text-primary
+  margin-bottom spacing-2
+
+.action-description
+  font-size font-size-sm
+  color text-secondary
+
+.action-btn
+  width 100%
+
+// Activity Section
+.activity-section
+  margin-bottom spacing-16
+
+.activity-list
+  background-color bg-primary
+  border-radius border-radius-lg
+  box-shadow shadow-md
+  overflow hidden
+
+.activity-item
+  padding spacing-6
+  border-bottom 1px solid border-color
+  display flex
+  align-items center
+  gap spacing-4
+  
+  &:last-child
+    border-bottom none
+
+.activity-icon
+  width 40px
+  height 40px
+  background-color bg-secondary
+  border-radius border-radius
+  display flex
+  align-items center
+  justify-content center
+  flex-shrink 0
+
+.activity-content
+  flex 1
+
+.activity-title
+  font-size font-size-base
+  font-weight 500
+  color text-primary
+  margin-bottom spacing-1
+
+.activity-time
+  font-size font-size-xs
+  color text-muted
+  margin-bottom spacing-1
+
+.activity-description
+  font-size font-size-sm
+  color text-secondary
+
+// Footer
+.dashboard-footer
+  background-color text-primary
+  color white
+  padding spacing-8 0
+
+.footer-content
+  display flex
+  align-items center
+  justify-content space-between
+
+.footer-text
+  font-size font-size-sm
+  color rgba(255, 255, 255, 0.7)
+
+.footer-links
+  display flex
+  gap spacing-6
+
+.footer-link
+  font-size font-size-sm
+  color rgba(255, 255, 255, 0.7)
+  text-decoration none
+  transition color 0.2s ease
+  
+  &:hover
+    color white
+
+// Responsive Design
+@media (min-width: 1200px)
+  .projects-grid
+    grid-template-columns repeat(3, 1fr)
+    max-width 1200px
+    margin 0 auto
+
+@media (max-width: 768px)
+  .container
+    padding 0 spacing-4
+  
+  .header-content
+    flex-direction column
+    gap spacing-4
+    text-align center
+  
+  .header-actions
+    width 100%
+    justify-content center
+  
+  .stats-grid
+    grid-template-columns 1fr
+  
+  .projects-grid
+    grid-template-columns 1fr
+  
+  .actions-grid
+    grid-template-columns 1fr
+  
+  .project-header
+    flex-direction column
+    text-align center
+  
+  .project-actions
+    flex-direction column
+  
+  .footer-content
+    flex-direction column
+    gap spacing-4
+    text-align center
+  
+  .footer-links
+    justify-content center
+
+@media (max-width: 480px)
+  .dashboard-main
+    padding spacing-6 0
+  
+  .section-title
+    font-size font-size-2xl
+  
+  .project-card
+    margin 0 spacing-2
+  
+  .btn
+    padding spacing-2 spacing-4
+    font-size font-size-xs
+
+// Animations
+@keyframes fadeIn
+  from
+    opacity 0
+    transform translateY(20px)
+  to
+    opacity 1
+    transform translateY(0)
+
+.project-card
+  animation fadeIn 0.6s ease-out
+
+.stat-card
+  animation fadeIn 0.6s ease-out 0.1s both
+
+.action-card
+  animation fadeIn 0.6s ease-out 0.2s both
+
+.activity-item
+  animation fadeIn 0.6s ease-out 0.3s both
