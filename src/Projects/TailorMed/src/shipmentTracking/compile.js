@@ -9,7 +9,7 @@ const STYLE_DIR = path.join(ROOT_DIR, 'styles');
 const SCRIPT_DIR = path.join(ROOT_DIR, 'scripts');
 const DATA_DIR = path.join(ROOT_DIR, 'data');
 const DIST_DIR = path.join(ROOT_DIR, 'dist');
-const ASSET_DIR = path.join(ROOT_DIR, '..', '..', 'assets');
+const IMAGE_DIR = path.join(ROOT_DIR, '..', '..', 'images');
 
 function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) {
@@ -81,7 +81,7 @@ try {
 console.log('📦 複製靜態資源...');
 copyDir(SCRIPT_DIR, path.join(DIST_DIR, 'js'));
 copyDir(DATA_DIR, path.join(DIST_DIR, 'data'));
-copyDir(ASSET_DIR, path.join(DIST_DIR, 'assets'));
+copyDir(IMAGE_DIR, path.join(DIST_DIR, 'images'));
 console.log('✅ 靜態資源已就緒');
 
 console.log('🎉 編譯完成！可以在 dist/index.html 預覽貨件追蹤 MVP');

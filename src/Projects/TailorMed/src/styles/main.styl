@@ -97,6 +97,9 @@ body
   &:disabled
     opacity 0.6
     cursor not-allowed
+
+  &:hover:not(:disabled)
+    transform translateY(-3px)
   
   &--primary
     background-color primary-color
@@ -104,7 +107,6 @@ body
     
     &:hover:not(:disabled)
       background-color darken(primary-color, 10%)
-      transform translateY(-2px)
       box-shadow shadow-lg
   
   &--secondary
@@ -113,9 +115,8 @@ body
     border 2px solid primary-color
     
     &:hover:not(:disabled)
-      background-color primary-color
-      color white
-      transform translateY(-2px)
+      background-color darken(white, 10%)
+      color text-primary
       box-shadow shadow-md
   
   &--outline
@@ -124,9 +125,8 @@ body
     border 2px solid primary-color
     
     &:hover:not(:disabled)
-      background-color primary-color
+      background-color darken(primary-color, 10%)
       color white
-      transform translateY(-2px)
       box-shadow shadow-md
   
   &--large
