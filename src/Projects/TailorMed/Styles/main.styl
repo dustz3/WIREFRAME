@@ -1,0 +1,176 @@
+// TailorMed Wireframe 基本樣式
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap')
+
+body
+  font-family 'Inter', 'PingFang TC', 'Microsoft JhengHei', sans-serif
+  margin 0
+  background #f6f8fb
+  color #1f2937
+
+.wireframe
+  .container
+    width min(1040px, 92vw)
+    margin 0 auto
+    padding 64px 0
+
+.hero
+  background linear-gradient(120deg, #2563eb 0%, #1d4ed8 100%)
+  color #fff
+
+  .container
+    padding 72px 0 64px
+
+  &__title
+    font-size 36px
+    font-weight 600
+    margin-bottom 16px
+
+  &__subtitle
+    font-size 18px
+    opacity 0.9
+    margin-bottom 32px
+
+  &__cta
+    display inline-flex
+    align-items center
+    gap 12px
+    background #fff
+    color #1d4ed8
+    border none
+    border-radius 999px
+    padding 14px 28px
+    font-weight 600
+    text-decoration none
+    letter-spacing 0.02em
+    transition transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease
+
+  &__cta:hover
+    transform translateY(-2px)
+    box-shadow 0 18px 36px rgba(15, 23, 42, 0.2)
+
+  &__cta-text
+    display inline-block
+
+  &__cta-icon
+    font-size 18px
+    transform translateY(1px)
+    transition transform 0.2s ease
+
+  &__cta:hover .hero__cta-icon
+    transform translate(4px, 1px)
+
+  &__nav-list
+    display flex
+    gap 24px
+    list-style none
+    padding 0
+    margin 0
+
+  &__nav-list a
+    color rgba(255, 255, 255, 0.92)
+    text-decoration none
+    font-weight 500
+    transition opacity 0.2s ease
+
+  &__nav-list a:hover
+    opacity 1
+
+.main
+  background #f6f8fb
+
+.section
+  margin-top 56px
+
+  &__title
+    font-size 28px
+    margin-bottom 24px
+    color #111827
+
+.grid
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(240px, 1fr))
+  gap 24px
+
+.card
+  background #fff
+  border 1px solid #e5e7eb
+  border-radius 20px
+  padding 24px
+  box-shadow 0 12px 32px rgba(37, 99, 235, 0.08)
+
+  &__title
+    font-size 20px
+    margin-bottom 12px
+    color #1d4ed8
+
+  &__text
+    font-size 15px
+    line-height 1.6
+    color #4b5563
+
+.timeline
+  list-style none
+  padding 0
+  margin 0
+  display grid
+  gap 16px
+
+  &__step
+    position relative
+    padding 16px 24px
+    background #fff
+    border-left 4px solid #2563eb
+    border-radius 12px
+    box-shadow 0 6px 16px rgba(37, 99, 235, 0.08)
+    font-weight 500
+
+.footer
+  background #111827
+  color #fff
+
+  .container
+    text-align center
+
+  &__title
+    font-size 28px
+    margin-bottom 12px
+
+  &__text
+    font-size 16px
+    opacity 0.85
+    margin-bottom 24px
+
+  &__btn
+    background #2563eb
+    color #fff
+    border none
+    border-radius 999px
+    padding 14px 28px
+    font-size 16px
+    font-weight 600
+    cursor pointer
+    transition transform 0.2s ease, box-shadow 0.2s ease
+
+  &__btn:hover
+    transform translateY(-2px)
+    box-shadow 0 12px 24px rgba(37, 99, 235, 0.25)
+
+@media (max-width: 768px)
+  .hero .container
+    padding 56px 0 48px
+
+  .hero__title
+    font-size 30px
+
+  .hero__subtitle
+    font-size 16px
+
+  .hero__nav-list
+    flex-direction column
+    gap 12px
+
+  .section__title
+    font-size 24px
+
+
