@@ -1,6 +1,11 @@
 // TailorMed Shipment Tracking Styles
 // 貨件追蹤系統樣式
 
+// TailorMed Color Variables
+primary-color = #143463
+secondary-color = #97d3df
+accent-color = #bb2749
+
 // CSS Variables
 :root
   --primary #0f172a
@@ -242,7 +247,7 @@ p
     max-width 1200px
     background white
     border-radius 16px
-    box-shadow 0 5px 10px rgba(12, 48, 88, 0.2)
+    box-shadow 0 5px 10px rgba(12, 48, 88, 0.4)
     padding 32px 40px
     flex-direction column
     gap 0
@@ -254,7 +259,7 @@ p
     max-width 1200px
     background white
     border-radius 16px
-    box-shadow 0 5px 10px rgba(12, 48, 88, 0.2)
+    box-shadow 0 5px 10px rgba(12, 48, 88, 0.4)
     padding 28px 36px
     display flex
     flex-direction column
@@ -324,12 +329,12 @@ p
               color #f59e0b
 
             &.status-departed
-              background rgba(16, 185, 129, 0.12)
-              color #10b981
+              background rgba(187, 39, 73, 0.12)
+              color #bb2749
 
             &.status-delivered
-              background rgba(16, 185, 129, 0.18)
-              color #047857
+              background rgba(187, 39, 73, 0.18)
+              color #9a1f3a
 
             &.status-exception
               background rgba(225, 29, 72, 0.12)
@@ -597,7 +602,7 @@ p
   max-width 1200px
   background white
   border-radius 16px
-  box-shadow 0 5px 10px rgba(12, 48, 88, 0.2)
+  box-shadow 0 5px 10px rgba(12, 48, 88, 0.4)
   padding 40px 48px
   display flex
   flex-direction column
@@ -630,7 +635,7 @@ p
     top 0
     left 0
     height 100%
-    background linear-gradient(90deg, #10b981 0%, #2563eb 100%)
+    background linear-gradient(90deg, primary-color 0%, accent-color 100%)
     border-radius 2px
     transition width 0.6s ease
 
@@ -703,10 +708,16 @@ p
     padding 4px
     box-shadow 0 2px 8px rgba(0, 0, 0, 0.15)
     transition all 0.3s ease
+    cursor pointer
+
+    &:hover
+      background secondary-color
+      box-shadow 0 4px 16px rgba(151, 211, 223, 0.4)
 
     &.scale-up
       transform translate(-50%, -50%) scale(1.3)
-      box-shadow 0 4px 16px rgba(245, 158, 11, 0.4)
+      background secondary-color
+      box-shadow 0 4px 16px rgba(151, 211, 223, 0.4)
 
     img
       width 24px
@@ -757,16 +768,16 @@ p
 
     &.completed
       .node-dot
-        background #10b981
-        box-shadow 0 2px 12px rgba(16, 185, 129, 0.4)
+        background primary-color
+        box-shadow 0 2px 12px rgba(20, 52, 99, 0.4)
 
       .node-icon
         color white
 
     &.active
       .node-dot
-        background #2563eb
-        box-shadow 0 2px 16px rgba(37, 99, 235, 0.6)
+        background accent-color
+        box-shadow 0 2px 16px rgba(187, 39, 73, 0.6)
         animation glow 1.5s infinite
 
       .node-icon
@@ -798,14 +809,14 @@ p
     padding 16px
     gap 12px
     transition all 0.3s ease
-    box-shadow 0 2px 8px rgba(0, 0, 0, 0.1)
+    box-shadow 0 2px 8px rgba(12, 48, 88, 0.4)
 
     &:hover
-      background #10b981
-      box-shadow 0 4px 16px rgba(16, 185, 129, 0.4)
+      background primary-color
+      box-shadow 0 4px 16px rgba(20, 52, 99, 0.4)
       
       .card-number
-        color #10b981
+        color primary-color
         background white
         border-color white
       
@@ -816,11 +827,11 @@ p
         color #fff
 
     &.event:hover
-      background #0097f3
-      box-shadow 0 4px 16px rgba(0, 151, 243, 0.4)
+      background secondary-color
+      box-shadow 0 4px 16px rgba(151, 211, 223, 0.4)
       
       .card-number
-        color #0097f3
+        color secondary-color
         background white
         border-color white
       
@@ -833,12 +844,26 @@ p
       .card-icon-img
         filter brightness(0) invert(1)
 
+    &.event.highlight
+      background secondary-color
+      box-shadow 0 4px 16px rgba(151, 211, 223, 0.4)
+      
+      .card-icon-wrapper
+        .card-icon-img
+          filter brightness(0) invert(1)
+      
+      .card-title
+        color #fff
+      
+      .card-time
+        color #fff
+
     &.completed.highlight
-      background #10b981
-      box-shadow 0 4px 16px rgba(16, 185, 129, 0.4)
+      background primary-color
+      box-shadow 0 4px 16px rgba(20, 52, 99, 0.4)
 
       .card-number
-        color #10b981
+        color primary-color
         background white
         border-color white
 
@@ -854,7 +879,7 @@ p
       border-radius 50%
       border 1px solid #dfeaf3
       background white
-      color #10b981
+      color #bb2749
       font-size 1.2rem
       font-weight 700
       display flex
@@ -874,16 +899,16 @@ p
       align-self flex-start
 
     .card-icon-wrapper
-      width 100%
       display flex
       align-items center
-      justify-content center
-      padding 8px 0
+      justify-content flex-start
+      padding 0
       flex-shrink 0
+      align-self flex-start
 
     .card-icon-img
-      width 48px
-      height 48px
+      width 35px
+      height 35px
       object-fit contain
 
     .card-content
@@ -906,14 +931,14 @@ p
 
     &.completed
       .card-number
-        color #10b981
+        color primary-color
 
     &.active
-      background #2563eb
-      box-shadow 0 4px 16px rgba(37, 99, 235, 0.4)
+      background accent-color
+      box-shadow 0 4px 16px rgba(187, 39, 73, 0.4)
 
       .card-number
-        color #2563eb
+        color accent-color
         background white
         border-color white
         animation pulse-card 2s infinite
@@ -926,6 +951,8 @@ p
 
     &.pending
       opacity 0.6
+      cursor not-allowed
+      pointer-events none
 
       .card-number
         color #cbd5e1
@@ -939,22 +966,7 @@ p
 
     &.event
       .card-icon
-        color #f59e0b 
-
-    &.event.highlight
-      background #fff8ed
-      border 2px solid #f59e0b
-      box-shadow 0 4px 16px rgba(245, 158, 11, 0.3)
-
-      .card-icon-img
-        filter none
-
-      .card-title
-        color #0f172a
-        font-weight 700
-
-      .card-time
-        color #666666
+        color #f59e0b
 
 @keyframes pulse
   0%
@@ -969,9 +981,9 @@ p
 
 @keyframes glow
   0%, 100%
-    box-shadow 0 2px 16px rgba(37, 99, 235, 0.6)
+    box-shadow 0 2px 16px rgba(187, 39, 73, 0.6)
   50%
-    box-shadow 0 2px 24px rgba(37, 99, 235, 0.9)
+    box-shadow 0 2px 24px rgba(187, 39, 73, 0.9)
 
 @keyframes float
   0%, 100%
@@ -984,6 +996,120 @@ p
     transform scale(1)
   50%
     transform scale(1.05)
+
+// Dry Ice Toggle Section
+.dryice-toggle-section
+  width 100%
+  max-width 1200px
+  display flex
+  justify-content center
+  align-items center
+  margin-top 24px
+  margin-bottom 40px
+
+.dryice-toggle-container
+  display flex
+  align-items center
+  gap 20px
+  padding 20px 32px
+  background white
+  border-radius 12px
+  box-shadow 0 2px 8px rgba(0, 0, 0, 0.08)
+  transition all 0.3s ease
+
+  &:hover
+    box-shadow 0 4px 12px rgba(0, 0, 0, 0.12)
+
+  .toggle-label
+    display flex
+    align-items center
+    gap 10px
+    font-size 1rem
+    font-weight 600
+    color #0f172a
+
+    .label-icon
+      font-size 1.5rem
+
+    .label-text
+      white-space nowrap
+
+  .toggle-switch
+    position relative
+    display inline-block
+    width 56px
+    height 28px
+    cursor pointer
+
+    input
+      opacity 0
+      width 0
+      height 0
+
+      &:checked + .toggle-slider
+        background primary-color
+
+      &:checked + .toggle-slider:before
+        transform translateX(28px)
+
+    .toggle-slider
+      position absolute
+      cursor pointer
+      top 0
+      left 0
+      right 0
+      bottom 0
+      background #cbd5e1
+      transition 0.3s
+      border-radius 28px
+
+      &:before
+        position absolute
+        content ''
+        height 22px
+        width 22px
+        left 3px
+        bottom 3px
+        background white
+        transition 0.3s
+        border-radius 50%
+        box-shadow 0 2px 4px rgba(0, 0, 0, 0.2)
+
+  .toggle-status
+    display flex
+    align-items center
+    gap 8px
+    font-size 0.9rem
+    font-weight 600
+
+    .status-text
+      transition all 0.3s ease
+      
+      &.active
+        color primary-color
+        
+      &.inactive
+        color #cbd5e1
+
+@media (max-width: 768px)
+  .dryice-toggle-section
+    margin-top 0
+    margin-bottom 48px
+    padding 0 5%
+
+  .dryice-toggle-container
+    padding 16px 20px
+    gap 12px
+    width 100%
+
+    .toggle-label
+      font-size 0.9rem
+      
+      .label-icon
+        font-size 1.3rem
+
+    .toggle-status
+      font-size 0.85rem
 
 // Breakpoints
 breakpoints = {
