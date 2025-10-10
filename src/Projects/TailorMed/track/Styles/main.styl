@@ -1,21 +1,22 @@
 // TailorMed Shipment Tracking Styles
 // 貨件追蹤系統樣式
 
-// TailorMed Color Variables
-primary-color = #143463
-secondary-color = #97d3df
-accent-color = #bb2749
+// Import TailorMed Variables
+@import 'variables.styl'
+
+// Import Components
+@import 'components/status-card.styl'
 
 // CSS Variables
 :root
-  --primary #0f172a
-  --secondary #64748b
-  --accent #2563eb
-  --text-primary #0f172a
-  --text-secondary #475569
-  --bg-primary #ffffff
-  --bg-secondary #f8fafc
-  --border-color rgba(15, 23, 42, 0.08)
+  --primary primary-color
+  --secondary secondary-color
+  --accent accent-color
+  --text-primary primary-color
+  --text-secondary neutral-gray
+  --bg-primary base-white
+  --bg-secondary neutral-light
+  --border-color rgba(primary-color, 0.08)
 
 // Base Styles
 *
@@ -44,7 +45,7 @@ body
 h1, h2, h3, h4, h5, h6
   font-weight 600
   line-height 1.2
-  color #fff
+  color base-white
   margin-bottom 1rem
 
 h1
@@ -78,20 +79,20 @@ p
   letter-spacing 0.05em
 
   &--primary
-    background #0C3058
-    color white
+    background primary-color
+    color base-white
 
     &:hover
-      background #0a2642
+      background darken(primary-color, 10%)
       transform translateY(-2px)
 
   &--outline
     background transparent
-    color white
-    border 2px solid white
+    color base-white
+    border 2px solid base-white
 
     &:hover
-      background rgba(255, 255, 255, 0.1)
+      background rgba(base-white, 0.1)
       transform translateY(-2px)
 
   &--large
@@ -144,8 +145,8 @@ p
     display inline-block
 
 .site-footer
-  background #0C3058
-  color white
+  background primary-color
+  color base-white
   padding 28px 0
 
   .container
@@ -155,7 +156,7 @@ p
   .site-footer__copy
     font-size 1rem
     text-align center
-    color white
+    color base-white
 
 @media (max-width: 768px)
   .site-footer
@@ -163,18 +164,18 @@ p
 
     .site-footer__copy
       font-size 0.8rem
-      color white
+      color base-white
 
 .hero-banner
   position relative
   width 100%
   min-height 400px
-  background linear-gradient(135deg, #0f172a 0%, #1f2a44 100%)
+  background linear-gradient(135deg, primary-color 0%, darken(primary-color, 20%) 100%)
   background-image url('../images/shipmentTracking.webp')
   background-size cover
   background-position center
   background-repeat no-repeat
-  color white
+  color base-white
   display flex
   align-items center
   overflow hidden
@@ -207,7 +208,7 @@ p
     font-size 2.5rem
     font-weight 700
     margin-bottom 16px
-    color white
+    color base-white
 
   .hero-subtitle
     font-size 1.125rem
@@ -224,12 +225,12 @@ p
 
   .btn--outline
     border-color white
-    color white
+    color base-white
 
     &:hover
       transform translateY(-3px)
       background rgba(255, 255, 255, 0.2)
-      color white
+      color base-white
 
 .hero-summary
   display flex
@@ -270,11 +271,11 @@ p
     .results-title
       font-size 1.4rem
       font-weight 600
-      color #0f172a
+      color primary-color
 
     .results-description
       font-size 0.95rem
-      color #475569
+      color neutral-gray
 
     .results-highlight
       padding 20px 24px
@@ -295,17 +296,17 @@ p
           .field-label
             font-size 0.75rem
             font-weight 600
-            color #64748b
+            color neutral-gray
             text-transform uppercase
             letter-spacing 0.08em
 
           .field-value
             font-size 1.4rem
             font-weight 600
-            color #0C3058
+            color primary-color
 
           .status-inline
-            color #2563eb
+            color accent-color
 
           .status-badge
             display inline-flex
@@ -318,11 +319,11 @@ p
             text-transform uppercase
             letter-spacing 0.08em
             background rgba(37, 99, 235, 0.1)
-            color #2563eb
+            color accent-color
 
             &.status-in-transit
               background rgba(37, 99, 235, 0.12)
-              color #2563eb
+              color accent-color
 
             &.status-customs
               background rgba(245, 158, 11, 0.12)
@@ -330,7 +331,7 @@ p
 
             &.status-departed
               background rgba(187, 39, 73, 0.12)
-              color #bb2749
+              color accent-color
 
             &.status-delivered
               background rgba(187, 39, 73, 0.18)
@@ -342,7 +343,7 @@ p
 
     .results-note
       font-size 0.9rem
-      color #64748b
+      color neutral-gray
       padding 12px 16px
       background rgba(248, 250, 252, 0.9)
       border 1px dashed rgba(12, 48, 88, 0.15)
@@ -358,8 +359,8 @@ p
       height 55px
       border none
       border-radius 10px
-      background #BB2749
-      color white
+      background accent-color
+      color base-white
       cursor pointer
       font-weight 700
       transition transform 0.2s ease
@@ -370,7 +371,7 @@ p
 
       &:hover
         transform translateY(-3px)
-        background darken(#BB2749, 10%)
+        background darken(accent-color, 10%)
 
       &:active
         transform translateY(0)
@@ -383,12 +384,12 @@ p
   .summary-title
     font-size 1.75rem
     font-weight 600
-    color #0f172a
+    color primary-color
 
   .summary-description
     font-size 1rem
     line-height 1.8
-    color #475569
+    color neutral-gray
     max-width 720px
 
   .summary-stats
@@ -403,11 +404,11 @@ p
       .stat-value
         font-size 1.5rem
         font-weight 700
-        color #2563eb
+        color accent-color
 
       .stat-label
         font-size 0.875rem
-        color #64748b
+        color secondary-color
         letter-spacing 0.02em
         text-transform uppercase
 
@@ -422,7 +423,7 @@ p
 
     .search-hint
       font-size 0.95rem
-      color #1e293b
+      color primary-color
 
     .summary-form
       display flex
@@ -445,7 +446,7 @@ p
         .input-label
           font-size 0.825rem
           font-weight 600
-          color #0f172a
+          color primary-color
           text-transform uppercase
           letter-spacing 0.08em
 
@@ -457,19 +458,19 @@ p
           transition all 0.2s ease
 
           &::placeholder
-            color #ccc
+            color neutral-gray
 
           &:focus
-            border-color #2563eb
-            box-shadow 0 0 0 3px rgba(37, 99, 235, 0.18)
+            border-color accent-color
+            box-shadow 0 0 0 3px rgba(accent-color, 0.18)
             outline none
 
       .form-helper
         font-size 0.85rem
-        color #64748b
+        color secondary-color
 
         .contact-phone
-          color #BB2749
+          color accent-color
           font-weight 600
 
       button.btn--primary
@@ -596,407 +597,6 @@ p
       .stat
         align-items flex-start
 
-// Status Card - Timeline
-.status-card
-  width 100%
-  max-width 1200px
-  background white
-  border-radius 16px
-  box-shadow 0 5px 10px rgba(12, 48, 88, 0.4)
-  padding 40px 48px
-  display flex
-  flex-direction column
-  gap 32px
-  position relative
-  z-index 2
-
-  .status-title
-    font-size 1.4rem
-    font-weight 600
-    color #0f172a
-    margin 0
-
-  .timeline-container
-    position relative
-    padding 20px 0
-
-  .timeline-track
-    position absolute
-    top 50%
-    left 0
-    right 0
-    height 4px
-    background #e2e8f0
-    transform translateY(-50%)
-    border-radius 2px
-
-  .timeline-progress
-    position absolute
-    top 0
-    left 0
-    height 100%
-    background linear-gradient(90deg, primary-color 0%, accent-color 100%)
-    border-radius 2px
-    transition width 0.6s ease
-
-  .timeline-nodes
-    position relative
-    display flex
-    justify-content space-between
-    align-items center
-    z-index 1
-
-  .timeline-event
-    position absolute
-    top -60px
-    transform translateX(-50%)
-    display flex
-    flex-direction column
-    align-items center
-    gap 8px
-    z-index 10
-
-    .event-icon
-      font-size 28px 
-      animation float 3s ease-in-out infinite
-
-    .event-bubble
-      position relative
-      background white
-      color #0f172a
-      font-size 0.75rem
-      font-weight 600
-      padding 8px 14px
-      border-radius 8px
-      white-space nowrap
-      box-shadow 0 4px 12px rgba(0, 0, 0, 0.15)
-      border 2px solid #2563eb
-
-      &::after
-        content ''
-        position absolute
-        top 100%
-        left 50%
-        transform translateX(-50%)
-        width 0
-        height 0
-        border-left 8px solid transparent
-        border-right 8px solid transparent
-        border-top 8px solid #2563eb
-
-      &::before
-        content ''
-        position absolute
-        top 100%
-        left 50%
-        transform translateX(-50%)
-        width 0
-        height 0
-        border-left 6px solid transparent
-        border-right 6px solid transparent
-        border-top 6px solid white
-        z-index 1
-        margin-top -2px
-
-  .timeline-event-icon
-    position absolute
-    top 50%
-    transform translate(-50%, -50%)
-    z-index 5
-    background white
-    border-radius 50%
-    padding 4px
-    box-shadow 0 2px 8px rgba(0, 0, 0, 0.15)
-    transition all 0.3s ease
-    cursor pointer
-
-    &:hover
-      background secondary-color
-      box-shadow 0 4px 16px rgba(151, 211, 223, 0.4)
-
-    &.scale-up
-      transform translate(-50%, -50%) scale(1.3)
-      background secondary-color
-      box-shadow 0 4px 16px rgba(151, 211, 223, 0.4)
-
-    img
-      width 24px
-      height 24px
-      display block
-      object-fit contain 
-
-  .timeline-node
-    position relative
-    display flex
-    align-items center
-    justify-content center
-    width 40px
-    height 40px
-    z-index 2
-
-    .node-dot
-      width 40px
-      height 40px
-      border-radius 50%
-      background #e2e8f0
-      box-shadow 0 2px 8px rgba(0, 0, 0, 0.1)
-      transition all 0.3s ease
-      position relative
-      z-index 2
-
-    &.scale-up .node-dot
-      transform scale(1.3)
-      box-shadow 0 4px 16px rgba(0, 0, 0, 0.2)
-
-    .node-icon
-      position absolute
-      font-size 1rem
-      font-weight 400
-      color white
-      opacity 1
-      padding-top 2px
-      transition opacity 0.3s ease
-      z-index 3
-
-    .node-pulse
-      position absolute
-      width 40px
-      height 40px
-      border-radius 50%
-      background rgba(37, 99, 235, 0.3)
-      animation pulse 2s infinite
-
-    &.completed
-      .node-dot
-        background primary-color
-        box-shadow 0 2px 12px rgba(20, 52, 99, 0.4)
-
-      .node-icon
-        color white
-
-    &.active
-      .node-dot
-        background accent-color
-        box-shadow 0 2px 16px rgba(187, 39, 73, 0.6)
-        animation glow 1.5s infinite
-
-      .node-icon
-        color white
-
-    &.pending
-      .node-dot
-        background #cbd5e1
-
-      .node-icon
-        color #94a3b8
-
-  .timeline-labels
-    display flex
-    flex-direction column
-    gap 16px
-    margin-top 32px
-
-  .timeline-row
-    display grid
-    grid-template-columns repeat(5, 1fr)
-    gap 12px
-
-  .timeline-card
-    background white
-    border-radius 8px
-    display flex
-    flex-direction column
-    padding 16px
-    gap 12px
-    transition all 0.3s ease
-    box-shadow 0 2px 8px rgba(12, 48, 88, 0.4)
-
-    &:hover
-      background primary-color
-      box-shadow 0 4px 16px rgba(20, 52, 99, 0.4)
-      
-      .card-number
-        color primary-color
-        background white
-        border-color white
-      
-      .card-title
-        color #fff
-      
-      .card-time
-        color #fff
-
-    &.event:hover
-      background secondary-color
-      box-shadow 0 4px 16px rgba(151, 211, 223, 0.4)
-      
-      .card-number
-        color secondary-color
-        background white
-        border-color white
-      
-      .card-title
-        color #fff
-      
-      .card-time
-        color #fff
-      
-      .card-icon-img
-        filter brightness(0) invert(1)
-
-    &.event.highlight
-      background secondary-color
-      box-shadow 0 4px 16px rgba(151, 211, 223, 0.4)
-      
-      .card-icon-wrapper
-        .card-icon-img
-          filter brightness(0) invert(1)
-      
-      .card-title
-        color #fff
-      
-      .card-time
-        color #fff
-
-    &.completed.highlight
-      background primary-color
-      box-shadow 0 4px 16px rgba(20, 52, 99, 0.4)
-
-      .card-number
-        color primary-color
-        background white
-        border-color white
-
-      .card-title
-        color white
-
-      .card-time
-        color white
-
-    .card-number
-      width 36px
-      height 36px
-      border-radius 50%
-      border 1px solid #dfeaf3
-      background white
-      color #bb2749
-      font-size 1.2rem
-      font-weight 700
-      display flex
-      align-items center
-      justify-content center
-      flex-shrink 0
-      align-self flex-start
-
-    .card-icon
-      width 36px
-      height 36px
-      font-size 1.8rem
-      display flex
-      align-items center
-      justify-content center
-      flex-shrink 0
-      align-self flex-start
-
-    .card-icon-wrapper
-      display flex
-      align-items center
-      justify-content flex-start
-      padding 0
-      flex-shrink 0
-      align-self flex-start
-
-    .card-icon-img
-      width 35px
-      height 35px
-      object-fit contain
-
-    .card-content
-      display flex
-      flex-direction column
-      gap 6px
-
-    .card-title
-      font-size 0.9rem
-      font-weight 600
-      color #666666
-      line-height 1.3
-      text-align left
-
-    .card-time
-      font-size 0.8rem
-      color #666666
-      line-height 1.2
-      text-align left
-
-    &.completed
-      .card-number
-        color primary-color
-
-    &.active
-      background accent-color
-      box-shadow 0 4px 16px rgba(187, 39, 73, 0.4)
-
-      .card-number
-        color accent-color
-        background white
-        border-color white
-        animation pulse-card 2s infinite
-
-      .card-title
-        color white
-
-      .card-time
-        color white
-
-    &.pending
-      opacity 0.6
-      cursor not-allowed
-      pointer-events none
-
-      .card-number
-        color #cbd5e1
-        border-color #dfeaf3
-
-      .card-title
-        color #cbd5e1
-
-      .card-time
-        color #cbd5e1
-
-    &.event
-      .card-icon
-        color #f59e0b
-
-@keyframes pulse
-  0%
-    transform scale(1)
-    opacity 0.6
-  50%
-    transform scale(1.3)
-    opacity 0.3
-  100%
-    transform scale(1)
-    opacity 0.6
-
-@keyframes glow
-  0%, 100%
-    box-shadow 0 2px 16px rgba(187, 39, 73, 0.6)
-  50%
-    box-shadow 0 2px 24px rgba(187, 39, 73, 0.9)
-
-@keyframes float
-  0%, 100%
-    transform translateY(0)
-  50%
-    transform translateY(-8px)
-
-@keyframes pulse-card
-  0%, 100%
-    transform scale(1)
-  50%
-    transform scale(1.05)
-
 // Dry Ice Toggle Section
 .dryice-toggle-section
   width 100%
@@ -1026,7 +626,7 @@ p
     gap 10px
     font-size 1rem
     font-weight 600
-    color #0f172a
+    color primary-color
 
     .label-icon
       font-size 1.5rem
@@ -1059,7 +659,7 @@ p
       left 0
       right 0
       bottom 0
-      background #cbd5e1
+      background neutral-light
       transition 0.3s
       border-radius 28px
 
@@ -1089,7 +689,7 @@ p
         color primary-color
         
       &.inactive
-        color #cbd5e1
+        color neutral-light
 
 @media (max-width: 768px)
   .dryice-toggle-section
