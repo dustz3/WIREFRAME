@@ -1,30 +1,5 @@
 // Timeline 和 Card 互動效果
 document.addEventListener('DOMContentLoaded', function () {
-  // Dry Ice Toggle 功能
-  const dryiceToggle = document.getElementById('dryiceToggle');
-  const eventCard = document.querySelector('.timeline-card.event');
-  const eventIcon = document.querySelector('.timeline-event-icon');
-  const statusActive = document.querySelector('.status-text.active');
-  const statusInactive = document.querySelector('.status-text.inactive');
-
-  if (dryiceToggle && eventCard && eventIcon) {
-    dryiceToggle.addEventListener('change', function () {
-      if (this.checked) {
-        // 顯示乾冰
-        eventCard.style.display = 'flex';
-        eventIcon.style.display = 'block';
-        statusActive.style.opacity = '1';
-        statusInactive.style.opacity = '0.3';
-      } else {
-        // 隱藏乾冰
-        eventCard.style.display = 'none';
-        eventIcon.style.display = 'none';
-        statusActive.style.opacity = '0.3';
-        statusInactive.style.opacity = '1';
-      }
-    });
-  }
-
   // Mobile Vertical Timeline - 調整乾冰圖示位置
   function adjustDryiceIconForMobile() {
     const eventIcon = document.querySelector('.timeline-event-icon');
