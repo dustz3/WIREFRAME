@@ -239,11 +239,11 @@ p
   padding 0 5%
   flex-direction column
   align-items center
-  gap 0
+  gap 24px
   margin-bottom 80px
 
-  .summary-card
-    display none
+  .tracking-lookup-card
+    display flex
     width 100%
     max-width 1200px
     background white
@@ -256,7 +256,7 @@ p
     z-index 2
 
   .results-card
-    display none
+    display flex
     width 100%
     max-width 1200px
     background white
@@ -417,7 +417,7 @@ p
     flex-direction column
     gap 16px
     padding 20px 24px
-    background rgba(37, 99, 235, 0.06)
+    background rgba(neutral-light, 0.15)
     border 1px solid rgba(37, 99, 235, 0.12)
     border-radius 12px
 
@@ -467,7 +467,8 @@ p
 
       .form-helper
         font-size 0.85rem
-        color secondary-color
+        color neutral-gray
+        margin-bottom 0
 
         .contact-phone
           color accent-color
@@ -524,7 +525,7 @@ p
     margin-bottom 48px
     gap 24px
 
-    .summary-card
+    .tracking-lookup-card
       width 100%
       padding 28px 24px
 
@@ -622,7 +623,7 @@ respond(laptop)
     grid-template-columns 1fr
     gap 24px
 
-  .summary-card,
+  .tracking-lookup-card,
   .results-card
     padding 28px 28px
 
@@ -653,7 +654,7 @@ respond(mobile)
     margin-bottom 48px
     gap 0
 
-  .summary-card
+  .tracking-lookup-card
     padding 28px 24px
 
   .results-card
