@@ -27,22 +27,8 @@ html(lang="zh-TW")
             p.hero-subtitle.hero-subtitle--mobile Use your order number and job ID to review the most recent shipment status available from TailorMed.
 
     section.hero-summary
-      .tracking-lookup-panel
-        h2.summary-title Shipment Tracking Lookup
-        .summary-search
-          form.summary-form(action="#", method="get")
-            .form-row
-              label.input-group
-                span.input-label Job No.
-                input(type="text", name="order", placeholder="e.g. TM-439812", required)
-              label.input-group
-                span.input-label Tracking No.
-                input(type="text", name="job", placeholder="e.g. JOB-20451", required)
-              button.btn.btn--primary(type="submit") CHECK STATUS
-            p.form-helper
-              | Need help? Contact your TailorMed logistics specialist at 
-              span.contact-phone +886 2-2694-6168
-              |  for priority support.
+      //- Include Tracking Lookup Panel
+      include components/lookupPanel.pug
 
       .results-panel
         h3.results-title Latest shipment updates

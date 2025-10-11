@@ -5,6 +5,7 @@
 @import 'variables.styl'
 
 // Import Components
+@import 'components/lookupPanel.styl'
 @import 'components/timelinePanel.styl'
 
 // CSS Variables
@@ -242,19 +243,6 @@ p
   gap 24px
   margin-bottom 80px
 
-  .tracking-lookup-panel
-    display flex
-    width 100%
-    max-width 1200px
-    background white
-    border-radius 16px
-    box-shadow panel-shadow
-    padding 32px 40px
-    flex-direction column
-    gap 0
-    position relative
-    z-index 2
-
   .results-panel
     display flex
     width 100%
@@ -381,105 +369,6 @@ p
     .results-empty
       display none
 
-  .summary-title
-    font-size 1.75rem
-    font-weight 600
-    color primary-color
-
-  .summary-description
-    font-size 1rem
-    line-height 1.8
-    color neutral-gray
-    max-width 720px
-
-  .summary-stats
-    display flex
-    gap 32px
-
-    .stat
-      display flex
-      flex-direction column
-      gap 8px
-
-      .stat-value
-        font-size 1.5rem
-        font-weight 700
-        color accent-color
-
-      .stat-label
-        font-size 0.875rem
-        color secondary-color
-        letter-spacing 0.02em
-        text-transform uppercase
-
-  .summary-search
-    display flex
-    flex-direction column
-    gap 16px
-    padding 20px 24px
-    background rgba(neutral-light, 0.15)
-    border 1px solid rgba(37, 99, 235, 0.12)
-    border-radius 12px
-
-    .search-hint
-      font-size 0.95rem
-      color primary-color
-
-    .summary-form
-      display flex
-      flex-direction column
-      gap 12px
-
-      .form-row
-        display grid
-        grid-template-columns repeat(3, minmax(0, 1fr))
-        gap 16px
-
-        @media (max-width: 992px)
-          grid-template-columns 1fr
-
-      .input-group
-        display flex
-        flex-direction column
-        gap 6px
-
-        .input-label
-          font-size 0.825rem
-          font-weight 600
-          color primary-color
-          text-transform uppercase
-          letter-spacing 0.08em
-
-        input
-          padding 12px 14px
-          border 1px solid rgba(15, 23, 42, 0.15)
-          border-radius 10px
-          font-size 1rem
-          transition all 0.2s ease
-
-          &::placeholder
-            color neutral-gray
-
-          &:focus
-            border-color accent-color
-            box-shadow 0 0 0 3px rgba(accent-color, 0.18)
-            outline none
-
-      .form-helper
-        font-size 0.85rem
-        color neutral-gray
-        margin-bottom 0
-
-        .contact-phone
-          color accent-color
-          font-weight 600
-
-      button.btn--primary
-        font-weight 700
-        letter-spacing 0.05em
-        text-transform uppercase
-        font-size 1.2rem
-
 @media (max-width: 768px)
   .hero-banner
     min-height 320px
@@ -525,10 +414,6 @@ p
     margin-bottom 48px
     gap 24px
 
-    .tracking-lookup-panel
-      width 100%
-      padding 28px 24px
-
     .results-panel
       width 100%
       padding 24px 22px
@@ -565,39 +450,6 @@ p
         width 100%
         margin-top 12px
 
-    .summary-description
-      display none
-
-    .summary-search
-      padding 0
-      background none
-      border none
-
-      .search-hint
-        display none
-
-      .summary-form
-        .form-row
-          grid-template-columns 1fr
-
-        .input-group
-          input
-            width 100%
-
-        button.btn--primary
-          width 100%
-          padding 14px 0
-
-      .form-helper
-        display none
-
-    .summary-stats
-      flex-direction column
-      gap 20px
-
-      .stat
-        align-items flex-start
-
 // Breakpoints
 breakpoints = {
   desktop: 1280px,
@@ -623,7 +475,6 @@ respond(laptop)
     grid-template-columns 1fr
     gap 24px
 
-  .tracking-lookup-panel,
   .results-panel
     padding 28px 28px
 
@@ -653,9 +504,6 @@ respond(mobile)
     margin-top -40px
     margin-bottom 48px
     gap 0
-
-  .tracking-lookup-panel
-    padding 28px 24px
 
   .results-panel
     padding 24px 22px
