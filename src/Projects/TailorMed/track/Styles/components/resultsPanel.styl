@@ -104,11 +104,63 @@
         font-weight 600
         color base-white
 
+      .status-value-wrapper
+        display flex
+        align-items center
+        gap 10px
+
       .status-inline
         color #fff
         padding 5px 10px
         background accent-color
         border-radius 5px
+
+      .status-icon-wrapper
+        position relative
+        display inline-flex
+        cursor pointer
+
+        &::after
+          content attr(data-tooltip)
+          position absolute
+          bottom 110%
+          left 50%
+          transform translateX(-50%)
+          padding 8px 12px
+          background rgba(0, 0, 0, 0.9)
+          color base-white
+          font-size 0.85rem
+          font-weight 500
+          white-space nowrap
+          border-radius 6px
+          opacity 0
+          pointer-events none
+          transition opacity 0.3s ease
+          z-index 10
+
+        &::before
+          content ''
+          position absolute
+          bottom 100%
+          left 50%
+          transform translateX(-50%)
+          width 0
+          height 0
+          border-left 6px solid transparent
+          border-right 6px solid transparent
+          border-top 6px solid rgba(0, 0, 0, 0.9)
+          opacity 0
+          pointer-events none
+          transition opacity 0.3s ease
+
+        &:hover::after,
+        &:hover::before
+          opacity 1
+
+      .status-icon
+        width 40px
+        height 40px
+        display block
 
       // Tracking No. (第一個欄位)
       &:nth-child(1)

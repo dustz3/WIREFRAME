@@ -32,7 +32,10 @@
         span.field-value EX39DAF9
       .summary-field.status-field
         span.field-label Status
-        span.field-value.status-inline.status-in-transit Out for Delivery
+        .status-value-wrapper
+          span.field-value.status-inline.status-in-transit Out for Delivery
+          .status-icon-wrapper(data-tooltip="Dry Ice Refilled")
+            img.status-icon(src="images/icon-dryice.svg", alt="Dry Ice Refilled")
       .summary-field
         span.field-label Last Update
         span.field-value 11-10-2025 14:30 (local)
