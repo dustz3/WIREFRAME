@@ -27,32 +27,11 @@ html(lang="zh-TW")
             p.hero-subtitle.hero-subtitle--mobile Use your order number and job ID to review the most recent shipment status available from TailorMed.
 
     section.hero-summary
+      //- Include Results Panel
+      include components/resultsPanel.pug
+
       //- Include Tracking Lookup Panel
       include components/lookupPanel.pug
-
-      .results-panel
-        h3.results-title Latest shipment updates
-        p.results-description Review the most recent update TailorMed has received for this shipment.
-        .results-highlight
-          .summary-grid
-            .summary-field
-              span.field-label Order No.
-              span.field-value TM-439812
-            .summary-field
-              span.field-label Job No.
-              span.field-value JOB-20451
-            .summary-field
-              span.field-label MAWB
-              span.field-value 074-12345678
-            .summary-field.status-field
-              span.field-label Status
-              span.field-value.status-inline.status-in-transit In Transit
-            .summary-field
-              span.field-label ETA
-              span.field-value 2025-10-06 14:30 (local)
-        p.results-note No recent updates. Please check again later.
-        button.btn.btn--primary.results-mobile-cta(type="button")
-          span.btn-text TRACKING ANOTHER SHIPMENT
 
       //- Include Shipment Timeline Panel
       include components/timelinePanel.pug

@@ -6,6 +6,7 @@
 
 // Import Components
 @import 'components/lookupPanel.styl'
+@import 'components/resultsPanel.styl'
 @import 'components/timelinePanel.styl'
 
 // CSS Variables
@@ -243,132 +244,6 @@ p
   gap 24px
   margin-bottom 80px
 
-  .results-panel
-    display flex
-    width 100%
-    max-width 1200px
-    background white
-    border-radius 16px
-    box-shadow panel-shadow
-    padding 28px 36px
-    flex-direction column
-    gap 20px
-    position relative
-    z-index 2
-
-    .results-title
-      font-size 1.4rem
-      font-weight 600
-      color primary-color
-
-    .results-description
-      font-size 0.95rem
-      color neutral-gray
-
-    .results-highlight
-      padding 20px 24px
-      background rgba(12, 48, 88, 0.06)
-      border 1px solid rgba(12, 48, 88, 0.12)
-      border-radius 14px
-
-      .summary-grid
-        display grid
-        grid-template-columns repeat(auto-fit, minmax(160px, 1fr))
-        gap 18px
-
-        .summary-field
-          display flex
-          flex-direction column
-          gap 6px
-
-          .field-label
-            font-size 0.75rem
-            font-weight 600
-            color neutral-gray
-            text-transform uppercase
-            letter-spacing 0.08em
-
-          .field-value
-            font-size 1.4rem
-            font-weight 600
-            color primary-color
-
-          .status-inline
-            color accent-color
-
-          .status-badge
-            display inline-flex
-            align-items center
-            justify-content center
-            padding 10px 16px
-            border-radius 999px
-            font-size 0.85rem
-            font-weight 700
-            text-transform uppercase
-            letter-spacing 0.08em
-            background rgba(37, 99, 235, 0.1)
-            color accent-color
-
-            &.status-in-transit
-              background rgba(37, 99, 235, 0.12)
-              color accent-color
-
-            &.status-customs
-              background rgba(245, 158, 11, 0.12)
-              color #f59e0b
-
-            &.status-departed
-              background rgba(187, 39, 73, 0.12)
-              color accent-color
-
-            &.status-delivered
-              background rgba(187, 39, 73, 0.18)
-              color #9a1f3a
-
-            &.status-exception
-              background rgba(225, 29, 72, 0.12)
-              color #e11d48
-
-    .results-note
-      font-size 0.9rem
-      color neutral-gray
-      padding 12px 16px
-      background rgba(248, 250, 252, 0.9)
-      border 1px dashed rgba(12, 48, 88, 0.15)
-      border-radius 12px
-      text-align center
-
-    .results-mobile-cta
-      display none
-      letter-spacing 0.05em
-      text-transform uppercase
-      font-size 1rem
-      padding 0 22px
-      height 55px
-      border none
-      border-radius 10px
-      background accent-color
-      color base-white
-      cursor pointer
-      font-weight 700
-      transition transform 0.2s ease
-
-      .btn-text
-        font-size inherit
-        line-height 1
-
-      &:hover
-        transform translateY(-3px)
-        background darken(accent-color, 10%)
-
-      &:active
-        transform translateY(0)
-
-    .results-summary,
-    .results-list,
-    .results-empty
-      display none
-
 @media (max-width: 768px)
   .hero-banner
     min-height 320px
@@ -414,42 +289,6 @@ p
     margin-bottom 48px
     gap 24px
 
-    .results-panel
-      width 100%
-      padding 24px 22px
-      gap 16px
-
-      .results-title
-        font-size 1.2rem
-
-      .results-description
-        font-size 0.9rem
-
-      .results-highlight
-        padding 18px 18px
-        background none
-        border none
-
-        .summary-grid
-          grid-template-columns 1fr
-          gap 14px
-
-          .summary-field
-            .field-value
-              font-size 1.4rem
-
-      .results-note
-        font-size 0.85rem
-        padding 12px 12px
-
-      .results-mobile-cta
-        display inline-flex
-        justify-content center
-        align-items center
-        font-size 1rem
-        width 100%
-        margin-top 12px
-
 // Breakpoints
 breakpoints = {
   desktop: 1280px,
@@ -474,9 +313,6 @@ respond(laptop)
   .hero-content
     grid-template-columns 1fr
     gap 24px
-
-  .results-panel
-    padding 28px 28px
 
 respond(tablet)
   .container
@@ -504,15 +340,4 @@ respond(mobile)
     margin-top -40px
     margin-bottom 48px
     gap 0
-
-  .results-panel
-    padding 24px 22px
-    gap 16px
-
-    .results-title
-      font-size 1.2rem
-
-  .summary-grid
-    grid-template-columns 1fr
-    gap 14px
 
