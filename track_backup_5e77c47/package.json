@@ -1,0 +1,13 @@
+{
+  "name": "tailormed-track-backup",
+  "version": "1.0.0",
+  "description": "TailorMed Track Backup from commit 5e77c47",
+  "scripts": {
+    "compile": "node compile.js"
+  },
+  "dependencies": {
+    "pug": "^3.0.2",
+    "stylus": "^0.59.0"
+  }
+}
+
