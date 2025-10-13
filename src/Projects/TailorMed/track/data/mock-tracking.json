@@ -1,74 +1,77 @@
 {
-  "TM123456789": {
-    "statusSummary": {
-      "currentStatus": "配送中",
-      "updatedAt": "2025-10-01 14:32",
-      "eta": "2025-10-02",
-      "location": "桃園物流中心"
+  "orderNo": "TM439812",
+  "trackingNo": "EX39DAF9",
+  "invoiceNo": "TM202507098",
+  "mawb": "074-12345678",
+  "origin": "TPE",
+  "destination": "PVG",
+  "packageCount": 1,
+  "weight": "25 KG",
+  "eta": "2025-10-06 14:30 (local)",
+  "status": "Out for Delivery",
+  "lastUpdate": "11-10-2025 14:30 (local)",
+  "timeline": [
+    {
+      "step": 1,
+      "title": "Order Created",
+      "time": "2025-10-01 09:30",
+      "status": "completed"
     },
-    "events": [
-      {
-        "status": "配送中",
-        "timestamp": "2025-10-01 14:32",
-        "location": "桃園物流中心",
-        "note": "已裝車，預計今日完成北部路線"
-      },
-      {
-        "status": "到達轉運站",
-        "timestamp": "2025-10-01 08:10",
-        "location": "桃園物流中心",
-        "note": "完成轉運站卸貨"
-      },
-      {
-        "status": "出貨準備",
-        "timestamp": "2025-09-30 21:40",
-        "location": "台南廠",
-        "note": "完成包裝，等待轉運車輛"
-      },
-      {
-        "status": "確認訂單",
-        "timestamp": "2025-09-30 10:05",
-        "location": "台南廠",
-        "note": "貨件資訊確認完畢"
-      }
-    ]
-  },
-  "TM987654321": {
-    "statusSummary": {
-      "currentStatus": "已送達",
-      "updatedAt": "2025-09-28 16:05",
-      "eta": "2025-09-28",
-      "location": "客戶端（台北市信義區）"
+    {
+      "step": 2,
+      "title": "Shipment Collected",
+      "time": "2025-10-01 15:20",
+      "status": "completed"
     },
-    "events": [
-      {
-        "status": "已送達",
-        "timestamp": "2025-09-28 16:05",
-        "location": "台北市信義區",
-        "note": "已由收貨人簽收"
-      },
-      {
-        "status": "配送中",
-        "timestamp": "2025-09-28 12:30",
-        "location": "台北市南港區",
-        "note": "配送車前往客戶地址"
-      },
-      {
-        "status": "到達轉運站",
-        "timestamp": "2025-09-27 22:15",
-        "location": "台北轉運中心"
-      },
-      {
-        "status": "出貨準備",
-        "timestamp": "2025-09-27 17:55",
-        "location": "桃園物流中心"
-      },
-      {
-        "status": "確認訂單",
-        "timestamp": "2025-09-27 09:25",
-        "location": "台南廠"
-      }
-    ]
-  }
+    {
+      "step": 3,
+      "title": "Origin Customs Process",
+      "time": "2025-10-02 10:15",
+      "status": "completed"
+    },
+    {
+      "step": 4,
+      "title": "Export Released",
+      "time": "2025-10-02 16:45",
+      "status": "completed"
+    },
+    {
+      "step": 5,
+      "title": "In Transit",
+      "time": "2025-10-03 08:00",
+      "status": "completed"
+    },
+    {
+      "step": 6,
+      "title": "Destination Customs",
+      "time": "2025-10-04 11:20",
+      "status": "completed"
+    },
+    {
+      "step": 7,
+      "title": "Import Released",
+      "time": "2025-10-04 17:30",
+      "status": "completed"
+    },
+    {
+      "step": null,
+      "title": "Dry Ice Refilled",
+      "time": "2025-10-04 19:45",
+      "status": "completed",
+      "isEvent": true,
+      "eventType": "dryice"
+    },
+    {
+      "step": 8,
+      "title": "Out for Delivery",
+      "time": "Processing...",
+      "status": "active"
+    },
+    {
+      "step": 9,
+      "title": "Shipment Delivered",
+      "time": "Pending",
+      "status": "pending"
+    }
+  ]
 }
-
