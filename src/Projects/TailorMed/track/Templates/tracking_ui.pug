@@ -30,14 +30,17 @@ html(lang="zh-TW")
             p.hero-subtitle.hero-subtitle--mobile Use your order number and job ID to review the most recent shipment status available from TailorMed.
 
     section.hero-summary
-      //- Include Results Panel
-      include components/resultsPanel.pug
-
-      //- Include Tracking Lookup Panel
+      //- 1. Shipment Tracking Lookup
       include components/lookupPanel.pug
 
-      //- Include Shipment Timeline Panel
+      //- 2. Latest shipment updates
+      include components/resultsPanel.pug
+
+      //- 3. Shipment Status Timeline (Original)
       include components/timelinePanel.pug
+
+      //- 4. Shipment Status Timeline v2 (New Design)
+      include components/timelinePanel-v2.pug
 
     footer.site-footer
       .container
