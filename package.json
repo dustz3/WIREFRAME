@@ -1,7 +1,7 @@
 {
-  "name": "tailormed-tracking-frontend",
+  "name": "wireframe",
   "version": "1.0.0",
-  "description": "TailorMed 貨件追蹤前端",
+  "description": "Wireframe projects collection",
   "scripts": {
     "build": "node compile.js"
   },
