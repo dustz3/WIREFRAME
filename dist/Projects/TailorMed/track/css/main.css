@@ -3035,7 +3035,7 @@ p {
   position: relative;
   width: 100%;
   min-height: 400px;
-  background: linear-gradient(135deg, #143463 0%, #102a4f 100%);
+  background: #143463;
   background-image: url("../images/shipmentTracking.webp");
   background-size: cover;
   background-position: center;
@@ -3048,7 +3048,7 @@ p {
 .hero-banner .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15,23,42,0.55);
+  background: rgba(20,52,99,0.75);
 }
 .hero-banner .container {
   position: relative;

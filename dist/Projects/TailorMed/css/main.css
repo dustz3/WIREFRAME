@@ -120,19 +120,19 @@ body {
 .hero-section {
   text-align: center;
   padding: 48px 0;
-  background-color: #fff;
+  background-color: #143463;
 }
 .hero-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 24px;
-  color: #143463;
+  color: #fff;
 }
 .hero-subtitle {
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 32px;
-  color: text-color;
+  color: rgba(255,255,255,0.9);
 }
 .hero-actions {
   display: flex;
