@@ -1,37 +1,33 @@
-// TailorMed 色彩系統
+// TailorMed 專案變數設定
 
+// 色彩系統
 primary-color = #143463
 secondary-color = #97d3df
-neutral-light = #dfeaf3
-neutral-dark = #222222
-neutral-gray = #666666
-base-white = #ffffff
 accent-color = #bb2749
-warning-color = #ffa500
+l = #333333
+background-color = #ffffff
 
-container-max-width = 1280px
-container-padding-x = 50px
+// 字體
+font-family-primary = 'Noto Sans', sans-serif
+font-size-base = 16px
+font-size-large = 20px
+font-size-small = 14px
 
-layout-container()
-  max-width container-max-width
-  width 100%
-  margin 0 auto
-  padding 0 container-padding-x
-  box-sizing border-box
+// 間距
+spacing-xs = 8px
+spacing-sm = 16px
+spacing-md = 24px
+spacing-lg = 32px
+spacing-xl = 48px
 
-breakpoints = {
-  desktop: 1280px,
-  laptop: 1024px,
-  tablet: 768px,
-  mobile: 480px
-}
+// 容器
+container-max-width = 1200px
+container-padding = 20px
 
-respond(size)
-  breakpoint = breakpoints[size]
-  if breakpoint
-    @media (max-width: breakpoint)
-      {block}
-  else
-    @media (max-width: size)
-      {block}
+// 圓角
+border-radius-button = 10px
 
+// 斷點
+breakpoint-mobile = 768px
+breakpoint-tablet = 1024px
+breakpoint-desktop = 1200px

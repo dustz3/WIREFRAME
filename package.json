@@ -1,26 +1,20 @@
 {
-  "name": "website-wireframe-dashboard",
+  "name": "wireframe",
   "version": "1.0.0",
-  "description": "Website Wireframe 專案管理介面",
-  "main": "index.js",
+  "description": "Wireframe projects collection",
   "scripts": {
-    "compile": "node compile.js",
-    "watch": "pug src/templates/*.pug -o dist/ --watch",
-    "stylus": "stylus src/styles/main.styl -o dist/css/",
-    "stylus:watch": "stylus src/styles/main.styl -o dist/css/ --watch",
-    "build": "node compile.js",
-    "dev": "npm run build && npm run watch & npm run stylus:watch"
+    "build": "node compile.js"
   },
-  "keywords": [
-    "wireframe",
-    "dashboard",
-    "project-management",
-    "preview"
-  ],
-  "author": "Website Wireframe Team",
-  "license": "MIT",
-  "devDependencies": {
-    "pug": "^3.0.3",
-    "stylus": "^0.63.0"
+  "dependencies": {
+    "pug": "^3.0.2",
+    "stylus": "^0.59.0"
   }
 }
+
+
+
+
+
+
+
+
