@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Temp Single Page
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin="true")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap")
+    link(rel="stylesheet", href="css/main.css")
+  body
+    include components/header.pug
+
+    main.main
+      section.section.hero
+        .container
+          h1.hero-title Thinking Creative
+          p.hero-text We're proud to be a trusted partner for a diverse range of clients, from startups to established enterprises.
+          .hero-actions
+            a.btn.btn-primary(href="#") Primary Action
+            a.btn.btn-secondary(href="#") Secondary Action
+      section.section.about
+        .container
+          .about-header
+            h2.about-title About
+            p.about-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          .about-cards
+            - var cards = [{ title: 'Notifications', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }, { title: 'Onboarding', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }, { title: 'User Feadback', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }]
+            each card in cards
+              article.about-card
+                .card-media
+                .card-body
+                  h3.card-title #{card.title}
+                  p.card-text #{card.description}
+                  a.card-link(href="#") Learn more
+
+    include components/footer.pug

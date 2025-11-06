@@ -1,0 +1,662 @@
+// YnEnergy - 綠色能源網站樣式
+// 使用草綠色作為主色系
+
+// 顏色變數
+primary-green = #22C55E      // 主綠色
+secondary-green = #16A34A    // 深綠色
+light-green = #4ADE80        // 淺綠色
+dark-green = #15803D         // 深綠
+accent-green = #10B981       // 強調綠色
+
+// 中性色
+white = #FFFFFF
+light-gray = #F9FAFB
+gray = #6B7280
+dark-gray = #374151
+black = #111827
+
+// 背景色
+bg-primary = #FFFFFF
+bg-secondary = #F0FDF4       // 淺綠背景
+bg-tertiary = #ECFDF5        // 更淺的綠背景
+
+// 文字色
+text-primary = #111827
+text-secondary = #374151
+text-muted = #6B7280
+
+// 邊框和陰影
+border-color = #D1FAE5
+border-radius = 12px
+border-radius-lg = 16px
+
+shadow-sm = 0 1px 2px 0 rgba(34, 197, 94, 0.05)
+shadow-md = 0 4px 6px -1px rgba(34, 197, 94, 0.1), 0 2px 4px -1px rgba(34, 197, 94, 0.06)
+shadow-lg = 0 10px 15px -3px rgba(34, 197, 94, 0.1), 0 4px 6px -2px rgba(34, 197, 94, 0.05)
+shadow-xl = 0 20px 25px -5px rgba(34, 197, 94, 0.1), 0 10px 10px -5px rgba(34, 197, 94, 0.04)
+
+// 字體
+font-family = 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+font-size-xs = 0.75rem
+font-size-sm = 0.875rem
+font-size-base = 1rem
+font-size-lg = 1.125rem
+font-size-xl = 1.25rem
+font-size-2xl = 1.5rem
+font-size-3xl = 1.875rem
+font-size-4xl = 2.25rem
+font-size-5xl = 3rem
+
+// 間距
+spacing-1 = 0.25rem
+spacing-2 = 0.5rem
+spacing-3 = 0.75rem
+spacing-4 = 1rem
+spacing-5 = 1.25rem
+spacing-6 = 1.5rem
+spacing-8 = 2rem
+spacing-10 = 2.5rem
+spacing-12 = 3rem
+spacing-16 = 4rem
+spacing-20 = 5rem
+spacing-24 = 6rem
+
+// 重置和基礎樣式
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+
+html
+  font-size 16px
+  line-height 1.6
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+body
+  font-family font-family
+  font-size font-size-base
+  color text-primary
+  background-color bg-primary
+  line-height 1.6
+
+// 容器
+.container
+  max-width 1200px
+  margin 0 auto
+  padding 0 spacing-6
+
+// 按鈕
+.btn
+  display inline-flex
+  align-items center
+  justify-content center
+  gap spacing-2
+  padding spacing-3 spacing-6
+  border none
+  border-radius border-radius
+  font-family font-family
+  font-size font-size-sm
+  font-weight 500
+  text-decoration none
+  cursor pointer
+  transition all 0.3s ease
+  white-space nowrap
+  
+  &:disabled
+    opacity 0.6
+    cursor not-allowed
+  
+  &--primary
+    background-color primary-green
+    color white
+    
+    &:hover:not(:disabled)
+      background-color secondary-green
+      transform translateY(-2px)
+      box-shadow shadow-lg
+  
+  &--secondary
+    background-color white
+    color text-primary
+    border 2px solid primary-green
+    
+    &:hover:not(:disabled)
+      background-color primary-green
+      color white
+      transform translateY(-2px)
+      box-shadow shadow-md
+  
+  &--large
+    padding spacing-4 spacing-8
+    font-size font-size-lg
+
+// 標題樣式
+.section-title
+  font-size font-size-3xl
+  font-weight 700
+  color text-primary
+  margin-bottom spacing-4
+  text-align center
+
+.section-subtitle
+  font-size font-size-lg
+  color text-secondary
+  text-align center
+  max-width 600px
+  margin 0 auto spacing-12
+
+// Header
+.header
+  background-color white
+  border-bottom 1px solid border-color
+  padding spacing-4 0
+  position sticky
+  top 0
+  z-index 100
+  box-shadow shadow-sm
+
+.header-content
+  display flex
+  align-items center
+  justify-content space-between
+
+.header-logo
+  display flex
+  align-items center
+  gap spacing-3
+
+.logo-text
+  font-size font-size-xl
+  font-weight 700
+  color text-primary
+
+.header-nav
+  display flex
+  align-items center
+
+.nav-list
+  display flex
+  list-style none
+  gap spacing-8
+
+.nav-link
+  font-size font-size-sm
+  font-weight 500
+  color text-secondary
+  text-decoration none
+  padding spacing-2 spacing-3
+  border-radius border-radius
+  transition all 0.3s ease
+  
+  &:hover
+    color primary-green
+    background-color rgba(34, 197, 94, 0.1)
+  
+  &.active
+    color primary-green
+    background-color rgba(34, 197, 94, 0.1)
+
+// Hero Section
+.hero
+  position relative
+  min-height 100vh
+  display flex
+  align-items center
+  background linear-gradient(135deg, bg-secondary 0%, bg-tertiary 100%)
+
+.hero-background
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  overflow hidden
+
+.hero-pattern
+  width 100%
+  height 100%
+  opacity 0.3
+
+.hero-content
+  position relative
+  z-index 10
+  display grid
+  grid-template-columns 1fr 1fr
+  gap spacing-16
+  align-items center
+
+.hero-text
+  .hero-title
+    font-size font-size-5xl
+    font-weight 700
+    color text-primary
+    margin-bottom spacing-6
+    line-height 1.2
+  
+  .hero-subtitle
+    font-size font-size-xl
+    color text-secondary
+    margin-bottom spacing-8
+    line-height 1.6
+
+.hero-cta
+  display flex
+  gap spacing-4
+
+.hero-visual
+  display flex
+  justify-content center
+  align-items center
+
+.energy-icon
+  animation float 3s ease-in-out infinite
+
+@keyframes float
+  0%, 100%
+    transform translateY(0px)
+  50%
+    transform translateY(-20px)
+
+// About Section
+.about
+  padding spacing-20 0
+  background-color white
+
+.about-content
+  display grid
+  grid-template-columns 1fr 1fr
+  gap spacing-16
+  align-items center
+
+.about-text
+  .about-description
+    margin-bottom spacing-8
+    
+    p
+      font-size font-size-lg
+      color text-secondary
+      line-height 1.7
+      margin-bottom spacing-4
+
+.about-stats
+  display flex
+  gap spacing-8
+
+.stat-item
+  text-align center
+  
+  .stat-number
+    font-size font-size-3xl
+    font-weight 700
+    color primary-green
+    display block
+    margin-bottom spacing-2
+  
+  .stat-label
+    font-size font-size-sm
+    color text-muted
+    font-weight 500
+
+.about-visual
+  .about-image
+    border-radius border-radius-lg
+    overflow hidden
+    box-shadow shadow-lg
+
+// Services Section
+.services
+  padding spacing-20 0
+  background-color bg-secondary
+
+.services-header
+  text-align center
+  margin-bottom spacing-16
+
+.services-grid
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(280px, 1fr))
+  gap spacing-8
+
+.service-card
+  background-color white
+  padding spacing-8
+  border-radius border-radius-lg
+  box-shadow shadow-md
+  text-align center
+  transition all 0.3s ease
+  
+  &:hover
+    transform translateY(-8px)
+    box-shadow shadow-xl
+
+.service-icon
+  width 80px
+  height 80px
+  margin 0 auto spacing-6
+  display flex
+  align-items center
+  justify-content center
+
+.service-title
+  font-size font-size-xl
+  font-weight 600
+  color text-primary
+  margin-bottom spacing-4
+
+.service-description
+  font-size font-size-base
+  color text-secondary
+  line-height 1.6
+
+// News Section
+.news
+  padding spacing-20 0
+  background-color white
+
+.news-header
+  text-align center
+  margin-bottom spacing-16
+
+.news-grid
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(350px, 1fr))
+  gap spacing-8
+
+.news-card
+  background-color white
+  border-radius border-radius-lg
+  overflow hidden
+  box-shadow shadow-md
+  transition all 0.3s ease
+  
+  &:hover
+    transform translateY(-4px)
+    box-shadow shadow-lg
+
+.news-image
+  height 200px
+  display flex
+  align-items center
+  justify-content center
+
+.news-content
+  padding spacing-6
+
+.news-date
+  font-size font-size-sm
+  color text-muted
+  margin-bottom spacing-2
+
+.news-title
+  font-size font-size-lg
+  font-weight 600
+  color text-primary
+  margin-bottom spacing-3
+
+.news-excerpt
+  font-size font-size-sm
+  color text-secondary
+  line-height 1.6
+  margin-bottom spacing-4
+
+.news-link
+  font-size font-size-sm
+  color primary-green
+  text-decoration none
+  font-weight 500
+  
+  &:hover
+    color secondary-green
+
+// Contact Section
+.contact
+  padding spacing-20 0
+  background-color bg-secondary
+
+.contact-content
+  display grid
+  grid-template-columns 1fr 1fr
+  gap spacing-16
+
+.contact-info
+  .contact-details
+    margin-top spacing-8
+
+.contact-item
+  display flex
+  align-items flex-start
+  gap spacing-4
+  margin-bottom spacing-6
+
+.contact-icon
+  width 48px
+  height 48px
+  background-color rgba(34, 197, 94, 0.1)
+  border-radius border-radius
+  display flex
+  align-items center
+  justify-content center
+  flex-shrink 0
+
+.contact-text
+  h4
+    font-size font-size-lg
+    font-weight 600
+    color text-primary
+    margin-bottom spacing-2
+  
+  p
+    font-size font-size-base
+    color text-secondary
+    line-height 1.6
+
+.contact-form
+  background-color white
+  padding spacing-8
+  border-radius border-radius-lg
+  box-shadow shadow-md
+
+.form-title
+  font-size font-size-xl
+  font-weight 600
+  color text-primary
+  margin-bottom spacing-6
+  text-align center
+
+.form-group
+  margin-bottom spacing-6
+
+.form-label
+  display block
+  font-size font-size-sm
+  font-weight 500
+  color text-primary
+  margin-bottom spacing-2
+
+.form-input,
+.form-textarea
+  width 100%
+  padding spacing-3 spacing-4
+  border 2px solid border-color
+  border-radius border-radius
+  font-size font-size-base
+  font-family font-family
+  transition all 0.3s ease
+  
+  &:focus
+    outline none
+    border-color primary-green
+    box-shadow 0 0 0 3px rgba(34, 197, 94, 0.1)
+
+.form-textarea
+  resize vertical
+  min-height 120px
+
+.form-submit
+  text-align center
+
+// Footer
+.footer
+  background-color dark-gray
+  color white
+  padding spacing-16 0
+
+.footer-content
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(250px, 1fr))
+  gap spacing-8
+  margin-bottom spacing-12
+
+.footer-section
+  .footer-logo
+    display flex
+    align-items center
+    gap spacing-3
+    margin-bottom spacing-4
+
+.footer-title
+  font-size font-size-lg
+  font-weight 600
+  margin-bottom spacing-4
+
+.footer-description
+  font-size font-size-sm
+  color #9CA3AF
+  line-height 1.6
+
+.footer-links
+  list-style none
+
+.footer-link-item
+  margin-bottom spacing-2
+
+.footer-link
+  font-size font-size-sm
+  color #9CA3AF
+  text-decoration none
+  transition color 0.3s ease
+  
+  &:hover
+    color white
+
+.footer-contact
+  .footer-contact-item
+    font-size font-size-sm
+    color #9CA3AF
+    line-height 1.6
+    margin-bottom spacing-3
+
+.footer-bottom
+  border-top 1px solid #374151
+  padding-top spacing-8
+  display flex
+  justify-content space-between
+  align-items center
+
+.footer-copyright
+  font-size font-size-sm
+  color #9CA3AF
+
+.footer-social
+  display flex
+  gap spacing-4
+
+.social-link
+  width 40px
+  height 40px
+  background-color #374151
+  border-radius 50%
+  display flex
+  align-items center
+  justify-content center
+  color #9CA3AF
+  transition all 0.3s ease
+  
+  &:hover
+    background-color primary-green
+    color white
+
+// 響應式設計
+@media (max-width: 768px)
+  .container
+    padding 0 spacing-4
+  
+  .header-content
+    flex-direction column
+    gap spacing-4
+  
+  .nav-list
+    flex-wrap wrap
+    justify-content center
+    gap spacing-4
+  
+  .hero-content
+    grid-template-columns 1fr
+    text-align center
+    gap spacing-8
+  
+  .hero-title
+    font-size font-size-4xl
+  
+  .hero-cta
+    justify-content center
+  
+  .about-content
+    grid-template-columns 1fr
+    gap spacing-8
+  
+  .about-stats
+    justify-content center
+  
+  .services-grid
+    grid-template-columns 1fr
+  
+  .news-grid
+    grid-template-columns 1fr
+  
+  .contact-content
+    grid-template-columns 1fr
+    gap spacing-8
+  
+  .footer-bottom
+    flex-direction column
+    gap spacing-4
+    text-align center
+
+@media (max-width: 480px)
+  .hero-title
+    font-size font-size-3xl
+  
+  .section-title
+    font-size font-size-2xl
+  
+  .hero-cta
+    flex-direction column
+    align-items center
+  
+  .about-stats
+    flex-direction column
+    gap spacing-4
+  
+  .btn
+    width 100%
+    justify-content center
+
+// 動畫效果
+@keyframes fadeInUp
+  from
+    opacity 0
+    transform translateY(30px)
+  to
+    opacity 1
+    transform translateY(0)
+
+.service-card,
+.news-card,
+.contact-form
+  animation fadeInUp 0.6s ease-out
+
+// 滾動效果
+html
+  scroll-behavior smooth

@@ -1,0 +1,38 @@
+[33mcommit b22a6eab557e4c52d46ae4a16c5d611ad6558c4f[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Aries H <dustz3@gmail.com>
+Date:   Wed Oct 15 11:22:46 2025 +0800
+
+    feat: 新增 Timeline Panel V2 設計
+    
+    - 新增 timelinePanel-v2.pug 和 timelinePanel-v2.styl
+    - V2 版本特色：
+      * 日期時間顯示在節點下方（月/日/時間格式）
+      * 三列佈局：上方卡片(1,3,5,7,9) + 時間軸 + 下方卡片(2,4,6,乾冰,8)
+      * 已完成步驟顯示白底藍邊框完成效果
+      * 乾冰卡片和節點圖標使用淺藍色主題
+      * 連接線精確對位各節點位置
+    - 調整版面排列順序：查找 → 最新更新 → Timeline V1 → Timeline V2
+    - 修改 JavaScript 互動邏輯，V2 版本不啟用節點與卡片連動
+    - 清理舊的備份檔案
+
+src/Projects/TailorMed/track/Javascript/interaction.js
+src/Projects/TailorMed/track/Styles/components/timelinePanel-v2.styl
+src/Projects/TailorMed/track/Styles/components/timelinePanel.styl
+src/Projects/TailorMed/track/Styles/main.styl
+src/Projects/TailorMed/track/Templates/components/timelinePanel-v2.pug
+src/Projects/TailorMed/track/Templates/components/timelinePanel.pug
+src/Projects/TailorMed/track/Templates/tracking_ui.pug
+src/Projects/TailorMed/track/compile.js
+track_backup_5e77c47/Assets/icon-dryice.svg
+track_backup_5e77c47/Assets/logo.png
+track_backup_5e77c47/Assets/shipmentTracking.jpg
+track_backup_5e77c47/Assets/shipmentTracking.webp
+track_backup_5e77c47/Assets/urgentCall.png
+track_backup_5e77c47/Javascript/app.js
+track_backup_5e77c47/Javascript/interaction.js
+track_backup_5e77c47/Styles/main.styl
+track_backup_5e77c47/Templates/index.pug
+track_backup_5e77c47/compile.js
+track_backup_5e77c47/data/mock-tracking.json
+track_backup_5e77c47/package-lock.json
+track_backup_5e77c47/package.json

@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Website Wireframe - 專案管理介面</title><meta name="description" content="Website Wireframe 專案管理和預覽介面，統一管理所有線框圖專案"><link rel="stylesheet" href="dist/css/main.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"></head><body><!-- Header--><header class="dashboard-header"><div class="container"><div class="header-content"><div class="header-logo"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="32" height="32" rx="8" fill="#2563EB"></rect><path d="M12 16H28M12 20H28M12 24H20" stroke="white" stroke-width="2" stroke-linecap="round"></path></svg><h1 class="logo-text">Website Wireframe</h1></div><div class="header-actions"><button class="btn btn--primary" id="compileAllBtn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17.5 10L15 7.5M17.5 10L15 12.5M17.5 10H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>編譯所有專案</button><button class="btn btn--secondary" id="refreshBtn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2.5 10C2.5 14.1421 5.85786 17.5 10 17.5C11.9325 17.5 13.6883 16.7441 14.9768 15.5M17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C8.06747 2.5 6.31169 3.25593 5.02318 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.8333 5.83333L17.5 4.16667L15.8333 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.16667 14.1667L2.5 15.8333L4.16667 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>重新整理</button></div></div></div></header><!-- Main Content--><main class="dashboard-main"><div class="container"><!-- Stats Section--><section class="stats-section"><div class="stats-grid"><div class="stat-card"><div class="stat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 7V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="stat-content"><div class="stat-number" id="activeProjectsCount">4</div><div class="stat-label">活躍專案</div></div></div><div class="stat-card"><div class="stat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"></path></svg></div><div class="stat-content"><div class="stat-number">100%</div><div class="stat-label">編譯成功</div></div></div><div class="stat-card"><div class="stat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="stat-content"><div class="stat-number">現代化</div><div class="stat-label">技術堆疊</div></div></div></div></section><!-- Projects Section--><section class="projects-section"><div class="section-header"><h2 class="section-title">專案列表</h2><p class="section-subtitle">管理和預覽所有 Website Wireframe 專案</p></div><div class="projects-grid" id="projectsGrid"><div class="project-card" data-project-id="tailormed"><div class="project-header"><div class="project-logo"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="6" fill="#2563EB"></rect><path d="M16 20H32M16 24H32M16 28H24" stroke="white" stroke-width="2"></path></svg></div><div class="project-info"><h3 class="project-title">TailorMed</h3><p class="project-description">專業冷鏈物流公司首頁線框圖</p></div><div class="project-status"><span class="status-badge status--active">活躍</span></div></div><div class="project-details"><div class="project-meta"><div class="meta-item"><div class="meta-label">類型</div><div class="meta-value"><span class="type-badge">企業網站</span></div></div><div class="meta-item"><div class="meta-label">技術</div><div class="meta-value"><span class="tech-badge">Pug</span><span class="tech-badge">Stylus</span></div></div><div class="meta-item"><div class="meta-label">更新</div><div class="meta-value"><span class="updated-text">今天</span></div></div></div><div class="project-features"><span class="feature-tag">響應式設計</span><span class="feature-tag">現代化 UI</span><span class="feature-tag">冷鏈專業</span></div></div><div class="project-actions"><button class="btn btn--primary preview-btn" data-preview-path="dist/tailormed/index.html">預覽</button><button class="btn btn--outline edit-btn">編輯</button></div></div><div class="project-card" data-project-id="ynenergy"><div class="project-header"><div class="project-logo"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" fill="#10B981"></circle><path d="M24 12L28 20H36L30 26L32 34L24 30L16 34L18 26L12 20H20L24 12Z" fill="white"></path></svg></div><div class="project-info"><h3 class="project-title">YnEnergy</h3><p class="project-description">綠色能源解決方案官方網站</p></div><div class="project-status"><span class="status-badge status--active">活躍</span></div></div><div class="project-details"><div class="project-meta"><div class="meta-item"><div class="meta-label">類型</div><div class="meta-value"><span class="type-badge">能源網站</span></div></div><div class="meta-item"><div class="meta-label">技術</div><div class="meta-value"><span class="tech-badge">Pug</span><span class="tech-badge">Stylus</span></div></div><div class="meta-item"><div class="meta-label">更新</div><div class="meta-value"><span class="updated-text">今天</span></div></div></div><div class="project-features"><span class="feature-tag">草綠色主題</span><span class="feature-tag">響應式設計</span><span class="feature-tag">能源解決方案</span></div></div><div class="project-actions"><button class="btn btn--primary preview-btn" data-preview-path="dist/ynenergy/index.html">預覽</button><button class="btn btn--outline edit-btn">編輯</button></div></div><div class="project-card" data-project-id="ylpm"><div class="project-header"><div class="project-logo"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="6" fill="#DC2626"></rect><path d="M16 16L24 12L32 16V32C32 33.1 31.1 34 30 34H18C16.9 34 16 33.1 16 32V16Z" fill="white"></path></svg></div><div class="project-info"><h3 class="project-title">YLPM</h3><p class="project-description">專業工程解決方案單頁式網站</p></div><div class="project-status"><span class="status-badge status--active">活躍</span></div></div><div class="project-details"><div class="project-meta"><div class="meta-item"><div class="meta-label">類型</div><div class="meta-value"><span class="type-badge">工程網站</span></div></div><div class="meta-item"><div class="meta-label">技術</div><div class="meta-value"><span class="tech-badge">Pug</span><span class="tech-badge">Stylus</span></div></div><div class="meta-item"><div class="meta-label">更新</div><div class="meta-value"><span class="updated-text">今天</span></div></div></div><div class="project-features"><span class="feature-tag">紅色系主題</span><span class="feature-tag">單頁式設計</span><span class="feature-tag">三大工程領域</span></div></div><div class="project-actions"><button class="btn btn--primary preview-btn" data-preview-path="dist/ylpm/index.html">預覽</button><button class="btn btn--outline edit-btn">編輯</button></div></div><div class="project-card" data-project-id="ylpm2"><div class="project-header"><div class="project-logo"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"></svg></div><div class="project-info"><h3 class="project-title">YLPM2</h3><p class="project-description">智慧解決方案企業網站 - 基於 Delock 設計</p></div><div class="project-status"><span class="status-badge status--active">活躍</span></div></div><div class="project-details"><div class="project-meta"><div class="meta-item"><div class="meta-label">類型</div><div class="meta-value"><span class="type-badge">智慧家庭網站</span></div></div><div class="meta-item"><div class="meta-label">技術</div><div class="meta-value"><span class="tech-badge">Pug</span><span class="tech-badge">Stylus</span></div></div><div class="meta-item"><div class="meta-label">更新</div><div class="meta-value"><span class="updated-text">今天</span></div></div></div><div class="project-features"><span class="feature-tag">橙色主題</span><span class="feature-tag">完整企業網站</span><span class="feature-tag">智慧自動化</span></div></div><div class="project-actions"><button class="btn btn--primary preview-btn" data-preview-path="dist/ylpm2/index.html">預覽</button><button class="btn btn--outline edit-btn">編輯</button></div></div></div></section><!-- Quick Actions--><section class="actions-section"><div class="section-header"><h2 class="section-title">快速操作</h2><p class="section-subtitle">常用功能和工具</p></div><div class="actions-grid"><div class="action-card"><div class="action-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2L20 10H28L22 16L24 24L16 20L8 24L10 16L4 10H12L16 2Z" fill="#10B981"></path></svg></div><div class="action-content"><h3 class="action-title">新建專案</h3><p class="action-description">創建新的線框圖專案</p></div><button class="btn btn--primary action-btn">開始創建</button></div><div class="action-card"><div class="action-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M28 16C28 22.6274 22.6274 28 16 28C9.37258 28 4 22.6274 4 16C4 9.37258 9.37258 4 16 4C22.6274 4 28 9.37258 28 16Z" stroke="#F59E0B" stroke-width="2"></path><path d="M16 10V16L20 18" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="action-content"><h3 class="action-title">批次編譯</h3><p class="action-description">一次編譯所有專案</p></div><button class="btn btn--secondary action-btn">開始編譯</button></div><div class="action-card"><div class="action-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2Z" stroke="#8B5CF6" stroke-width="2"></path><path d="M12 16L14.5 18.5L20 13" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="action-content"><h3 class="action-title">專案備份</h3><p class="action-description">備份所有專案檔案</p></div><button class="btn btn--outline action-btn">開始備份</button></div></div></section><!-- Recent Activity--><section class="activity-section"><div class="section-header"><h2 class="section-title">最近活動</h2><p class="section-subtitle">專案更新和編譯記錄</p></div><div class="activity-list"><div class="activity-item"><div class="activity-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17.5 10L15 7.5M17.5 10L15 12.5M17.5 10H2.5" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="activity-content"><div class="activity-title">TailorMed 2026 編譯完成</div><div class="activity-time">2 分鐘前</div><div class="activity-description">成功編譯 Pug 模板和 Stylus 樣式</div></div></div><div class="activity-item"><div class="activity-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="activity-content"><div class="activity-title">檔案修改</div><div class="activity-time">15 分鐘前</div><div class="activity-description">更新了 index.pug 模板檔案</div></div></div><div class="activity-item"><div class="activity-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4H12L14 8H18V16H14L12 20H8L6 16H2V8H6L8 4Z" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="activity-content"><div class="activity-title">專案初始化</div><div class="activity-time">1 小時前</div><div class="activity-description">創建了 TailorMed 2026 專案結構</div></div></div></div></section></div></main><!-- Footer--><footer class="dashboard-footer"><div class="container"><div class="footer-content"><div class="footer-info"><p class="footer-text">© 2024 Website Wireframe Dashboard. 專業的線框圖專案管理工具。</p></div><div class="footer-links"><a class="footer-link" href="#">使用說明</a><a class="footer-link" href="#">技術支援</a><a class="footer-link" href="#">關於我們</a></div></div></div></footer><!-- Scripts--><script>// 專案配置從伺服器端傳入
+const projectsConfig = {
+  "projects": [{"id":"tailormed","name":"TailorMed","description":"專業冷鏈物流公司首頁線框圖","path":"src/Projects/TailorMed","previewPath":"dist/tailormed/index.html","tech":["Pug","Stylus"],"type":"企業網站","status":"active","features":["響應式設計","現代化 UI","冷鏈專業","合規展示"],"lastUpdated":"今天"},{"id":"ynenergy","name":"YnEnergy","description":"綠色能源解決方案官方網站","path":"src/Projects/ynenergy","previewPath":"dist/ynenergy/index.html","tech":["Pug","Stylus"],"type":"能源網站","status":"active","features":["草綠色主題","響應式設計","能源解決方案","聯絡表單"],"lastUpdated":"今天"},{"id":"ylpm","name":"YLPM","description":"專業工程解決方案單頁式網站","path":"src/Projects/YLPM","previewPath":"dist/ylpm/index.html","tech":["Pug","Stylus"],"type":"工程網站","status":"active","features":["紅色系主題","單頁式設計","三大工程領域","工業4.0專區"],"lastUpdated":"今天"},{"id":"ylpm2","name":"YLPM2","description":"智慧解決方案企業網站 - 基於 Delock 設計","path":"src/Projects/YLPM2","previewPath":"dist/ylpm2/index.html","tech":["Pug","Stylus"],"type":"智慧家庭網站","status":"active","features":["橙色主題","完整企業網站","智慧自動化","響應式設計"],"lastUpdated":"今天"}]
+};
+
+// 移除了 loadProjects 函數，因為專案卡片現在由伺服器端 Pug 模板直接生成
+
+// 移除了 createProjectCard 函數，因為專案卡片現在由伺服器端 Pug 模板直接生成
+
+// 綁定專案事件
+function bindProjectEvents() {
+  // 專案預覽
+  document.querySelectorAll('.preview-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      let projectPath = this.dataset.previewPath;
+      // 如果路徑以 / 開頭，移除它以使用相對路徑
+      if (projectPath.startsWith('/')) {
+        projectPath = projectPath.substring(1);
+      }
+      console.log('點擊預覽按鈕，專案路徑:', projectPath);
+      
+      // 嘗試開啟新視窗
+      const newWindow = window.open(projectPath, '_blank');
+      
+      // 如果無法開啟新視窗，可能是瀏覽器限制
+      if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+        alert('無法開啟新視窗，請手動導航到：\\n' + projectPath);
+      }
+    });
+  });
+  
+  // 專案編譯
+  document.querySelectorAll('.project-compile').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const projectPath = this.dataset.projectPath;
+      this.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 1V15M8 1L3 6M8 1L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        編譯中...
+      `;
+      this.disabled = true;
+      
+      setTimeout(() => {
+        this.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M13.5 8L11 5.5M13.5 8L11 10.5M13.5 8H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          編譯
+        `;
+        this.disabled = false;
+      }, 2000);
+    });
+  });
+}
+
+// 頁面載入完成後初始化
+document.addEventListener('DOMContentLoaded', function() {
+  bindProjectEvents();
+});
+
+// 編譯所有專案
+document.getElementById('compileAllBtn').addEventListener('click', function() {
+  this.innerHTML = `
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 1V19M10 1L4 7M10 1L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    編譯中...
+  `;
+  this.disabled = true;
+  
+  // 模擬編譯過程
+  setTimeout(() => {
+    this.innerHTML = `
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M17.5 10L15 7.5M17.5 10L15 12.5M17.5 10H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      編譯完成
+    `;
+    setTimeout(() => {
+      this.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M17.5 10L15 7.5M17.5 10L15 12.5M17.5 10H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        編譯所有專案
+      `;
+      this.disabled = false;
+    }, 2000);
+  }, 3000);
+});
+
+// 重新整理
+document.getElementById('refreshBtn').addEventListener('click', function() {
+  location.reload();
+});</script></body></html>

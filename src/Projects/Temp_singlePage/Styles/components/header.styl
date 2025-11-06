@@ -1,0 +1,72 @@
+@import '../variables'
+
+.site-header
+  background baseWhite
+  height 75px
+  display flex
+  align-items center
+  border-bottom 1px solid rgba(textDark, 0.08)
+
+  .container
+    max-width 1280px
+    width 100%
+    margin 0 auto
+    padding 0 40px
+    display flex
+    align-items center
+    justify-content space-between
+    gap 32px
+    height 100%
+    box-sizing border-box
+
+  .site-logo
+    font-size 1.35rem
+    font-weight 700
+    color primaryColor
+    text-decoration none
+    letter-spacing 0.04em
+
+  .site-nav
+    flex 1
+
+    .nav-list
+      display flex
+      align-items center
+      justify-content center
+      gap 28px
+      list-style none
+      margin 0
+      padding 0
+
+      a
+        font-size 1rem
+        color textDark
+        text-decoration none
+        letter-spacing 0.02em
+        transition color 0.2s ease
+
+        &:hover,
+        &.is-active
+          color primaryColor
+
+  .header-actions
+    flex 0 0 auto
+
+    .btn-cta
+      display inline-flex
+      align-items center
+      justify-content center
+      min-width 120px
+      height 42px
+      padding 0 28px
+      border-radius 999px
+      background primaryColor
+      color baseWhite
+      font-size 0.95rem
+      font-weight 600
+      text-decoration none
+      transition transform 0.2s ease, box-shadow 0.2s ease
+
+      &:hover
+        transform translateY(-2px)
+        box-shadow 0 12px 24px rgba(primaryColor, 0.25)

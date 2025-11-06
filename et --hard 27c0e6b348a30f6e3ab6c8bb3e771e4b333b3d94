@@ -1,0 +1,27 @@
+[33m34dddce[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m fix: 修正 resultsPanel.pug 縮排錯誤
+[33m0b20d8a[m feat: 優化 Results Panel Status Info 區域
+[33mee136c5[m feat: Mobile 版本 status-info 獨立為視覺區塊
+[33m825b013[m feat: 完整重構 Track 專案的三大 Panel 組件
+[33m20a0072[m refactor: 獨立 Lookup Panel 組件
+[33m118ba7c[m refactor: 重新命名組件檔案為更直覺的 timelinePanel
+[33m6820f6b[m refactor: 重新命名 COMPONENTS 為 ComponentsLib
+[33m6595f91[m refactor: 重新命名為 Panel 並統一陰影樣式
+[33m5c1c17d[m refactor: 完整組件化 ShipmentTimeline
+[33mf93fdad[m feat: 新增 ShipmentTimeline 元件並優化 TailorMed Track 專案
+[33ma668f4d[m 優化 Mobile Timeline：隱藏節點、顯示編號、調整佈局和乾冰卡片樣式
+[33m3e0751a[m 優化 Mobile 版本：移除 hover 效果、調整對位、隱藏乾冰卡片和 toggle 功能
+[33mf7d5872[m 解決衝突：保留模組化的 status-card 組件結構
+[33m69ba072[m 重構 status-card 為獨立組件並統一顏色變數
+[33mec908be[m feat(TailorMed): 修正 Timeline 互動邏輯與 Mobile 垂直佈局
+[33m213e379[m feat(TailorMed): 增強貨件追蹤系統 Timeline 互動功能與乾冰服務 Toggle
+[33m5e77c47[m Update TailorMed project and add new projects (Temp_singlePage, YAANFUHE)
+[33m066c065[m refactor: update TailorMed wireframe structure
+[33m61cc2e1[m chore: restructure TailorMed and Dashboard project layout
+[33mab5b0ed[m ??撠?蝯?銝血??TailorMed 鞎其辣餈質馱?
+[33m02afdd9[m 設定git
+[33m9fd5b15[m Update dashboard and TailorMed shipment tracking UI
+[33m9487e12[m Update project files and styles
+[33m91ef578[m 新增 YLPM 專案卡片到 Dashboard 和獨立關於我們頁面
+[33m4203487[m Add B&M minimalist logo design - SVG preview files with multiple variations
+[33m47a408f[m 重構 TailorMed-2026 為多頁面企業網站
+[33mf680e2c[m Initial commit

@@ -1,0 +1,173 @@
+.site-footer
+  background primaryColor
+  color baseWhite
+  padding 64px 0 20px
+
+  .container
+    layoutContainer()
+    display grid
+    grid-template-columns 30% 1fr 30%
+    column-gap 64px
+    align-items stretch
+
+  .footer-meta
+    margin-top 52px
+    border-top 1px solid rgba(baseWhite, 0.15)
+    padding-top 24px
+
+    .container
+      layoutContainer()
+      display flex
+      justify-content space-between
+      align-items center
+      color rgba(baseWhite, 0.75)
+
+    .footer-legal
+      display flex
+      gap 16px
+      align-items center
+
+      .footer-link
+        color rgba(baseWhite, 0.85)
+        text-decoration none
+        font-weight 500
+
+        &:hover
+          color baseWhite
+
+      .separator
+        color rgba(baseWhite, 0.4)
+
+    .footer-copy
+      font-size 0.85rem
+      margin 0
+
+  .footer-brand
+    display flex
+    flex-direction column
+    gap 18px
+
+    .footer-logo
+      font-size 1.8rem
+      font-weight 700
+      color baseWhite
+      text-decoration none
+      letter-spacing 0.04em
+
+    .footer-mission
+      font-size 0.95rem
+      line-height 1.6
+      color rgba(baseWhite, 0.85)
+      max-width 340px
+      margin 0
+
+    .social-links
+      display flex
+      gap 16px
+
+      .social-icon
+        display inline-flex
+        align-items center
+        justify-content center
+        width 40px
+        height 40px
+        border-radius 50%
+        background rgba(baseWhite, 0.15)
+        color baseWhite
+        font-weight 600
+        text-decoration none
+        transition background 0.2s ease, transform 0.2s ease
+
+        &:hover
+          background rgba(baseWhite, 0.35)
+          transform translateY(-2px)
+
+  .footer-links
+    display flex
+    align-items flex-start
+    gap 100px
+
+    .footer-heading
+      font-size 1rem
+      font-weight 600
+      margin-bottom 16px
+
+    .footer-list
+      list-style none
+      margin 0
+      padding 0
+      display flex
+      flex-direction column
+      gap 10px
+
+      a
+        color rgba(baseWhite, 0.85)
+        text-decoration none
+        font-weight 500
+        transition color 0.2s ease
+        white-space nowrap
+
+        &:hover
+          color baseWhite
+
+  .footer-social
+    flex 0 0 30%
+    display flex
+    flex-direction column
+    justify-content flex-start
+    align-items flex-start
+    gap 24px
+    height 100%
+
+    .footer-contact
+      display flex
+      flex-direction column
+      gap 12px
+      font-size 0.95rem
+      color rgba(baseWhite, 0.85)
+
+      .footer-heading
+        font-size 1rem
+        font-weight 600
+        margin-bottom 4px
+
+      .footer-list
+        list-style none
+        margin 0
+        padding 0
+        display flex
+        flex-direction column
+        gap 8px
+
+        li
+          display flex
+          align-items center
+          gap 10px
+
+          .contact-label
+            font-weight 600
+
+          .contact-text
+            word-break break-word
+
+    .footer-actions
+      width 100%
+      display flex
+      justify-content flex-end
+      margin-top auto
+
+      .btn--track
+        display inline-flex
+        align-items center
+        justify-content center
+        padding 10px 24px
+        border-radius 999px
+        background baseWhite
+        color primaryColor
+        font-weight 600
+        text-decoration none
+        transition transform 0.2s ease, box-shadow 0.2s ease
+
+        &:hover
+          transform translateY(-2px)
+          box-shadow 0 12px 24px rgba(baseWhite, 0.2)

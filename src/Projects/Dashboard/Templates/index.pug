@@ -1,0 +1,304 @@
+doctype html
+html(lang="zh-TW")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Website Wireframe - 專案管理介面
+    meta(name="description", content="Website Wireframe 專案管理和預覽介面，統一管理所有線框圖專案")
+    link(rel="stylesheet", href="css/main.css")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap", rel="stylesheet")
+  
+  body
+    // Header
+    header.dashboard-header
+      .container
+        .header-content
+          .header-logo
+            svg(width="40", height="40", viewBox="0 0 40 40", fill="none")
+              rect(x="4", y="4", width="32", height="32", rx="8", fill="#2563EB")
+              path(d="M12 16H28M12 20H28M12 24H20", stroke="white", stroke-width="2", stroke-linecap="round")
+            h1.logo-text Website Wireframe
+          
+          .header-actions
+            button.btn.btn--primary#compileAllBtn
+              svg(width="20", height="20", viewBox="0 0 20 20", fill="none")
+                path(d="M17.5 10L15 7.5M17.5 10L15 12.5M17.5 10H2.5", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+              | 編譯所有專案
+            button.btn.btn--secondary#refreshBtn
+              svg(width="20", height="20", viewBox="0 0 20 20", fill="none")
+                path(d="M2.5 10C2.5 14.1421 5.85786 17.5 10 17.5C11.9325 17.5 13.6883 16.7441 14.9768 15.5M17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C8.06747 2.5 6.31169 3.25593 5.02318 4.5", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+                path(d="M15.8333 5.83333L17.5 4.16667L15.8333 2.5", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+                path(d="M4.16667 14.1667L2.5 15.8333L4.16667 17.5", stroke="currentColor", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+              | 重新整理
+
+    // Main Content
+    main.dashboard-main
+      .container
+        // Stats Section
+        section.stats-section
+          .stats-grid
+            .stat-card
+              .stat-icon
+                svg(width="24", height="24", viewBox="0 0 24 24", fill="none")
+                  path(d="M3 7V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V7", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                  path(d="M8 21H16", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                  path(d="M12 17V21", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+              .stat-content
+                .stat-number#activeProjectsCount= projects ? projects.length : 0
+                .stat-label 活躍專案
+              
+            .stat-card
+              .stat-icon
+                svg(width="24", height="24", viewBox="0 0 24 24", fill="none")
+                  path(d="M9 12L11 14L15 10", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                  path(d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z", stroke="currentColor", stroke-width="2")
+              .stat-content
+                .stat-number 100%
+                .stat-label 編譯成功
+            
+            .stat-card
+              .stat-icon
+                svg(width="24", height="24", viewBox="0 0 24 24", fill="none")
+                  path(d="M12 2L2 7L12 12L22 7L12 2Z", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                  path(d="M2 17L12 22L22 17", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+                  path(d="M2 12L12 17L22 12", stroke="currentColor", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+              .stat-content
+                .stat-number 現代化
+                .stat-label 技術堆疊
+
+        // Projects Section
+        section.projects-section
+          .section-header
+            h2.section-title 專案列表
+            p.section-subtitle 管理和預覽所有 Website Wireframe 專案
+          
+          .projects-grid#projectsGrid
+            if projects
+              each project in projects
+                .project-card(data-project-id=project.id)
+                  .project-header
+                    .project-logo
+                      svg(width="48", height="48", viewBox="0 0 48 48", fill="none")
+                        if project.type === '企業網站'
+                          rect(x="8", y="8", width="32", height="32", rx="6", fill="#2563EB")
+                          path(d="M16 20H32M16 24H32M16 28H24", stroke="white", stroke-width="2")
+                        else if project.type === '能源網站'
+                          circle(cx="24", cy="24", r="16", fill="#10B981")
+                          path(d="M24 12L28 20H36L30 26L32 34L24 30L16 34L18 26L12 20H20L24 12Z", fill="white")
+                        else if project.type === '工程網站'
+                          rect(x="8", y="8", width="32", height="32", rx="6", fill="#DC2626")
+                          path(d="M16 16L24 12L32 16V32C32 33.1 31.1 34 30 34H18C16.9 34 16 33.1 16 32V16Z", fill="white")
+                    .project-info
+                      h3.project-title= project.name
+                      p.project-description= project.description
+                    .project-status
+                      span.status-badge(class=project.status === 'active' ? 'status--active' : 'status--inactive')
+                        = project.status === 'active' ? '活躍' : '非活躍'
+                  
+                  .project-details
+                    .project-meta
+                      .meta-item
+                        .meta-label 類型
+                        .meta-value
+                          span.type-badge= project.type
+                      .meta-item
+                        .meta-label 技術
+                        .meta-value
+                          each tech in project.tech
+                            span.tech-badge= tech
+                      .meta-item
+                        .meta-label 更新
+                        .meta-value
+                          span.updated-text= project.lastUpdated
+                    
+                    .project-features
+                      each feature in project.features.slice(0, 3)
+                        span.feature-tag= feature
+                  
+                  .project-actions
+                    button.btn.btn--primary.preview-btn(data-preview-path=project.previewPath) 預覽
+                    button.btn.btn--outline.edit-btn 編輯
+            else
+              .empty-state
+                p 沒有找到專案
+
+        // Quick Actions
+        section.actions-section
+          .section-header
+            h2.section-title 快速操作
+            p.section-subtitle 常用功能和工具
+        
+          .actions-grid
+            .action-card
+              .action-icon
+                svg(width="32", height="32", viewBox="0 0 32 32", fill="none")
+                  path(d="M16 2L20 10H28L22 16L24 24L16 20L8 24L10 16L4 10H12L16 2Z", fill="#10B981")
+              .action-content
+                h3.action-title 新建專案
+                p.action-description 創建新的線框圖專案
+              button.btn.btn--primary.action-btn 開始創建
+            
+            .action-card
+              .action-icon
+                svg(width="32", height="32", viewBox="0 0 32 32", fill="none")
+                  path(d="M28 16C28 22.6274 22.6274 28 16 28C9.37258 28 4 22.6274 4 16C4 9.37258 9.37258 4 16 4C22.6274 4 28 9.37258 28 16Z", stroke="#F59E0B", stroke-width="2")
+                  path(d="M16 10V16L20 18", stroke="#F59E0B", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+              .action-content
+                h3.action-title 批次編譯
+                p.action-description 一次編譯所有專案
+              button.btn.btn--secondary.action-btn 開始編譯
+            
+            .action-card
+              .action-icon
+                svg(width="32", height="32", viewBox="0 0 32 32", fill="none")
+                  path(d="M16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2Z", stroke="#8B5CF6", stroke-width="2")
+                  path(d="M12 16L14.5 18.5L20 13", stroke="#8B5CF6", stroke-width="2", stroke-linecap="round", stroke-linejoin="round")
+              .action-content
+                h3.action-title 專案備份
+                p.action-description 備份所有專案檔案
+              button.btn.btn--outline.action-btn 開始備份
+
+        // Recent Activity
+        section.activity-section
+          .section-header
+            h2.section-title 最近活動
+            p.section-subtitle 專案更新和編譯記錄
+          
+          .activity-list
+            .activity-item
+              .activity-icon
+                svg(width="20", height="20", viewBox="0 0 20 20", fill="none")
+                  path(d="M17.5 10L15 7.5M17.5 10L15 12.5M17.5 10H2.5", stroke="#10B981", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+              .activity-content
+                .activity-title TailorMed 2026 編譯完成
+                .activity-time 2 分鐘前
+                .activity-description 成功編譯 Pug 模板和 Stylus 樣式
+            
+            .activity-item
+              .activity-icon
+                svg(width="20", height="20", viewBox="0 0 20 20", fill="none")
+                  path(d="M15 5L5 15M5 5L15 15", stroke="#EF4444", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+              .activity-content
+                .activity-title 檔案修改
+                .activity-time 15 分鐘前
+                .activity-description 更新了 index.pug 模板檔案
+            
+            .activity-item
+              .activity-icon
+                svg(width="20", height="20", viewBox="0 0 20 20", fill="none")
+                  path(d="M8 4H12L14 8H18V16H14L12 20H8L6 16H2V8H6L8 4Z", stroke="#3B82F6", stroke-width="1.5", stroke-linecap="round", stroke-linejoin="round")
+              .activity-content
+                .activity-title 專案初始化
+                .activity-time 1 小時前
+                .activity-description 創建了 TailorMed 2026 專案結構
+
+    // Footer
+    footer.dashboard-footer
+      .container
+        .footer-content
+          .footer-info
+            p.footer-text © 2024 Website Wireframe Dashboard. 專業的線框圖專案管理工具。
+          .footer-links
+            a.footer-link(href="#") 使用說明
+            a.footer-link(href="#") 技術支援
+            a.footer-link(href="#") 關於我們
+
+    // Scripts
+    script.
+      // 專案配置從伺服器端傳入
+      const projectsConfig = {
+        "projects": !{JSON.stringify(projects || [])}
+      };
+
+      // 移除了 loadProjects 函數，因為專案卡片現在由伺服器端 Pug 模板直接生成
+
+      // 移除了 createProjectCard 函數，因為專案卡片現在由伺服器端 Pug 模板直接生成
+
+      // 綁定專案事件
+      function bindProjectEvents() {
+        // 專案預覽
+        document.querySelectorAll('.preview-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            let projectPath = this.dataset.previewPath;
+            // 如果路徑以 / 開頭，移除它以使用相對路徑
+            if (projectPath.startsWith('/')) {
+              projectPath = projectPath.substring(1);
+            }
+            console.log('點擊預覽按鈕，專案路徑:', projectPath);
+            
+            // 嘗試開啟新視窗
+            const newWindow = window.open(projectPath, '_blank');
+            
+            // 如果無法開啟新視窗，可能是瀏覽器限制
+            if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+              alert('無法開啟新視窗，請手動導航到：\\n' + projectPath);
+            }
+          });
+        });
+        
+        // 專案編譯
+        document.querySelectorAll('.project-compile').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const projectPath = this.dataset.projectPath;
+            this.innerHTML = `
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1V15M8 1L3 6M8 1L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              編譯中...
+            `;
+            this.disabled = true;
+            
+            setTimeout(() => {
+              this.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M13.5 8L11 5.5M13.5 8L11 10.5M13.5 8H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                編譯
+              `;
+              this.disabled = false;
+            }, 2000);
+          });
+        });
+      }
+
+      // 頁面載入完成後初始化
+      document.addEventListener('DOMContentLoaded', function() {
+        bindProjectEvents();
+      });
+
+      // 編譯所有專案
+      document.getElementById('compileAllBtn').addEventListener('click', function() {
+        this.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 1V19M10 1L4 7M10 1L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          編譯中...
+        `;
+        this.disabled = true;
+        
+        // 模擬編譯過程
+        setTimeout(() => {
+          this.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M17.5 10L15 7.5M17.5 10L15 12.5M17.5 10H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            編譯完成
+          `;
+          setTimeout(() => {
+            this.innerHTML = `
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M17.5 10L15 7.5M17.5 10L15 12.5M17.5 10H2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              編譯所有專案
+            `;
+            this.disabled = false;
+          }, 2000);
+        }, 3000);
+      });
+      
+      // 重新整理
+      document.getElementById('refreshBtn').addEventListener('click', function() {
+        location.reload();
+      });

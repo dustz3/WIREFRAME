@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": "tailormed",
+      "name": "TailorMed",
+      "description": "專業冷鏈物流公司首頁線框圖",
+      "path": "src/Projects/TailorMed",
+      "previewPath": "dist/tailormed/index.html",
+      "tech": ["Pug", "Stylus"],
+      "type": "企業網站",
+      "status": "active",
+      "features": ["響應式設計", "現代化 UI", "冷鏈專業", "合規展示"],
+      "lastUpdated": "今天"
+    },
+    {
+      "id": "ynenergy",
+      "name": "YnEnergy",
+      "description": "綠色能源解決方案官方網站",
+      "path": "src/Projects/ynenergy",
+      "previewPath": "dist/ynenergy/index.html",
+      "tech": ["Pug", "Stylus"],
+      "type": "能源網站",
+      "status": "active",
+      "features": ["草綠色主題", "響應式設計", "能源解決方案", "聯絡表單"],
+      "lastUpdated": "今天"
+    },
+    {
+      "id": "ylpm",
+      "name": "YLPM",
+      "description": "專業工程解決方案單頁式網站",
+      "path": "src/Projects/YLPM",
+      "previewPath": "dist/ylpm/index.html",
+      "tech": ["Pug", "Stylus"],
+      "type": "工程網站",
+      "status": "active",
+      "features": ["紅色系主題", "單頁式設計", "三大工程領域", "工業4.0專區"],
+      "lastUpdated": "今天"
+    },
+    {
+      "id": "ylpm2",
+      "name": "YLPM2",
+      "description": "智慧解決方案企業網站 - 基於 Delock 設計",
+      "path": "src/Projects/YLPM2",
+      "previewPath": "dist/ylpm2/index.html",
+      "tech": ["Pug", "Stylus"],
+      "type": "智慧家庭網站",
+      "status": "active",
+      "features": ["橙色主題", "完整企業網站", "智慧自動化", "響應式設計"],
+      "lastUpdated": "今天"
+    }
+  ]
+}

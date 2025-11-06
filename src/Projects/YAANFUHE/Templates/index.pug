@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title YAANFUHE Composite Solutions
+    link(rel="icon", type="image/png", href="images/logo.png")
+    link(rel="apple-touch-icon", href="images/logo.png")
+    link(rel="stylesheet", href="css/main.css")
+  body.temp-site
+    include components/header.pug
+
+    main.temp-main
+      section#hero.hero
+        .container
+      section#product-banner.product-banner
+        img(src="images/products.avif", alt="Product showcase")
+      section#about-banner.about-banner
+        img(src="images/about.avif", alt="About Yayan Composite")
+      section#showcase.showcase
+        .container
+          video.showcase-video(src="https://gv.videocdn.alibaba.com/icbu_vod_video/video_target/gv96-84c69e8d-a1ac1f40-96339c8e-095d/trans/aidc/hzr91c-h264-hd.mp4", controls, playsinline)
+            | Your browser does not support the video tag.
+      section#advantage-banner.advantage-banner
+        img(src="images/ouradvantage.avif", alt="Our Advantage")
+      section#certificate-banner.certificate-banner
+        img(src="images/certificate.avif", alt="Certificates")
+      section#hot-products-banner.hot-products-banner
+        img(src="images/hotproducts.avif", alt="Hot Products")
+
+    include components/footer.pug

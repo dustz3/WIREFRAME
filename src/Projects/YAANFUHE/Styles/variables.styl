@@ -1,0 +1,35 @@
+// YAYAN color system
+
+primaryColor = #0080d9
+secondaryColor = #97d3df
+neutralLight = #f9f9f9
+neutralDark = #222222
+neutralGray = #666666
+baseWhite = #ffffff
+accentColor = #bb2749
+
+containerMaxWidth = 1280px
+containerPaddingX = 50px
+
+layoutContainer()
+  max-width containerMaxWidth
+  width 100%
+  margin 0 auto
+  padding 0 containerPaddingX
+  box-sizing border-box
+
+breakpoints = {
+  desktop: 1280px,
+  laptop: 1024px,
+  tablet: 768px,
+  mobile: 480px
+}
+
+respond(size)
+  breakpoint = breakpoints[size]
+  if breakpoint
+    @media (max-width: breakpoint)
+      {block}
+  else
+    @media (max-width: size)
+      {block}

@@ -1,0 +1,83 @@
+@import '../variables'
+
+.site-footer
+  background bgDark
+  color textLight
+  font-size 1rem
+  display flex
+  flex-direction column
+
+  .footer-top
+    height 75px
+    display flex
+    align-items center
+
+    .container
+      max-width 1280px
+      width 100%
+      margin 0 auto
+      padding 0 40px
+      display flex
+      align-items center
+      justify-content space-between
+
+      .footer-logo
+        font-size 1.2rem
+        font-weight 700
+        color baseWhite
+        text-decoration none
+        letter-spacing 0.04em
+
+      .footer-nav-list
+        display flex
+        gap 28px
+        list-style none
+        margin 0
+        padding 0
+
+        a
+          color textLight
+          text-decoration none
+          letter-spacing 0.02em
+          transition color 0.2s ease
+
+          &:hover,
+          &.is-active
+            color secondaryColor
+
+  .footer-bottom
+    height 50px
+    border-top 1px solid rgba(baseWhite, 0.08)
+    display flex
+    align-items center
+
+    .container
+      max-width 1280px
+      width 100%
+      margin 0 auto
+      padding 0 40px
+      display flex
+      align-items center
+      justify-content space-between
+
+      .footer-links
+        display flex
+        align-items center
+        gap 12px
+
+        .footer-link
+          color textLight
+          text-decoration none
+          transition color 0.2s ease
+
+          &:hover
+            color secondaryColor
+
+        .divider
+          color rgba(baseWhite, 0.4)
+
+      .footer-copy
+        font-size 0.95rem
+
+        span
+          color rgba(baseWhite, 0.8)
