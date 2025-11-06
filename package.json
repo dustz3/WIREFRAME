@@ -3,18 +3,18 @@
   "version": "1.0.0",
   "description": "Wireframe projects collection",
   "scripts": {
-    "build": "node compile.js"
+    "build": "node compile.js",
+    "build:tailormed": "node compile-tailormed.js",
+    "watch:tailormed": "node watch-tailormed.js",
+    "dev:tailormed": "node dev-tailormed.js"
   },
   "dependencies": {
     "pug": "^3.0.2",
     "stylus": "^0.59.0"
+  },
+  "devDependencies": {
+    "chokidar": "^4.0.3",
+    "concurrently": "^9.2.1",
+    "http-server": "^14.1.1"
   }
 }
-
-
-
-
-
-
-
-
