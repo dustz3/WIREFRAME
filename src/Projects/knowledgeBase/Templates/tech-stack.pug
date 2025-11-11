@@ -1,0 +1,92 @@
+doctype html
+html(lang="zh-Hant")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title 技術棧與使用文件
+    link(rel="stylesheet" href="css/main.css")
+  body
+    main.doc-wrapper
+      section.doc-card
+        header.doc-header
+          h1.doc-title 技術棧與使用文件
+        section.doc-body
+          h2 1. 架構概觀
+          ol
+            li 前端（Static Site）：Pug → dist 靜態頁，Stylus → CSS。
+            li 後端（Serverless）：Netlify Functions（tracking.js）處理 routing（/api/tracking、/api/health、/api/monitoring/stats）。
+            li 配置：netlify.toml、redirects。
+
+          h2 2. 主要技術
+          ol
+            li 前端：Pug、Stylus、原生 JS、Chart.js（Admin 可選）。
+            li 後端：Node 18、Netlify Functions、Airtable JS SDK。
+            li 平台：Netlify Pro（自訂網域、部署、環境變數）。
+            li 版本控管：GitHub。
+
+          h2 3. 目錄結構（重點）
+          ol
+            li netlify/functions/tracking.js（主函式）
+            li index.html（前台查詢頁）
+            li backend/admin.html（監控頁，可選）
+            li Templates/Styles → 編譯至 dist/
+            li _redirects、netlify.toml
+
+          h2 4. 環境變數
+          ol
+            li AIRTABLE_API_KEY、AIRTABLE_BASE_ID、AIRTABLE_SHIPMENTS_TABLE=Tracking
+            li （可選）API_KEY_xxx（若需要多把金鑰）
+            li NODE_VERSION=18（netlify.toml）
+
+          h2 5. 部署流程
+          ol
+            li 本地：npm ci && npm run build → 產出 dist/
+            li Git 推送 → Netlify 自動建置（netlify.toml）
+            li 確認 Function 路徑：/.netlify/functions/tracking
+            li 路由設定：
+              ol
+                li /api/tracking → /.netlify/functions/tracking（200）
+                li /api/monitoring/stats → 同上（200，可選）
+                li /api/health → 同上（200）
+                li /* → /index.html（SPA fallback）
+
+          h2 6. API 規格（摘要）
+          h3 GET /api/tracking
+          ol
+            li query：orderNo（必）、trackingNo（必）
+            li 200：{ success, data:{ orderNo, trackingNo, status, eta, lastUpdate, timeline[] } }
+            li 404：{ error: 'Not found' }
+            li 429：{ error: 'Too many requests' }
+            li 500：{ error: 'Internal server error' }
+          h3 GET /api/monitoring/stats（可選）
+          ol
+            li 200：{ today, thisMonth, tracking:{ averageResponseTime, successRate, successfulQueries, totalQueries }, system:{ totalRequests }, recentRequests:[{ time, method, path, status, responseTime, orderNo, trackingNo }] }
+          h3 GET /api/health
+          ol
+            li 200：{ status: 'ok' }
+
+          h2 7. 錯誤處理與日誌
+          ol
+            li try/catch → 500；Airtable 失敗紀錄錯誤、回傳訊息。
+            li 404：無資料。
+            li 監控：recordMonitoringEntry() 記錄 timestamp、path、success、durationMs、orderNo、trackingNo。
+            li Netlify Logs 觀測。
+
+          h2 8. 安全與限流
+          ol
+            li IP + API Key（可選）rate limit（預設匿名 100/hr、有 Key 50/hr 可調）。
+            li CORS 僅允許必要來源。
+            li 不回傳敏感欄位，Airtable 欄位白名單輸出。
+
+          h2 9. 前端使用說明（track.tailormed-intl.com）
+          ol
+            li URL 參數：?orderNo=&trackingNo=（亦相容 ?order=&tracking=）（可選）。
+            li 查詢成功時以 history.pushState 更新 URL。
+            li RWD 與樣式：Stylus 編譯；時間軸樣式依資料切換。
+
+          h2 10. 本地開發
+          ol
+            li npm run dev
+            li 修改後端：functions 熱更新；前端：直接預覽 dist/ 或開發模板編譯。
+
+        footer.doc-hint

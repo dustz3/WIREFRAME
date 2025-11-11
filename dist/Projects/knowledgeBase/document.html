@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knowledge Base Document</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <main class="doc-wrapper">
+      <section class="doc-card">
+        <header class="doc-header">
+          <h1 class="doc-title">系統需求概覽 </h1>
+        </header>
+        <section class="doc-body">
+          <h2>專案簡介與目標</h2>
+          <ul>
+            <li>目的：提供收送件之貨況查詢（客戶前台）與狀態資料查詢（API），提升透明度、降低內部人工查詢作業及提升客戶服務品質。</li>
+            <li>交付：前端查貨頁（index.html）、時間軸模組（兩種樣式與事件節點）、Netlify Functions API、Airtable 連結、監控 Dashboard（可選）。</li>
+          </ul>
+          <h2>2. 角色與利害關係人</h2>
+          <ul>
+            <li>最終用戶：Shipper/Consignee（查詢貨況）。</li>
+            <li>後台營運人員：維護資料與回覆需求。</li>
+            <li>系統維運：萬能數維有限公司。</li>
+            <li>第三方：Netlify、Airtable。</li>
+          </ul>
+          <h2>3. 使用情境（User Stories）</h2>
+          <ul>
+            <li>作為顧客，輸入 Job No. 與 Tracking No. 查詢貨件狀態與時間軸。</li>
+            <li>作為營運，可在 Airtable 更新各階段時間欄位，前台即時反映。</li>
+            <li>作為維運，可透過監控頁了解 API 成功率、平均回應時間與最近請求（需有監控 Dashboard 功能）。</li>
+          </ul>
+          <h2>4. 範圍與不在範圍</h2>
+          <ul>
+            <li>範圍：國內及國際運輸單件查詢、時間軸視覺、基礎監控（可選）、自訂網域部署、基本安全驗證與限流。</li>
+            <li>不在範圍：會員系統、權限分級、支付、第三方物流 API 聚合、報表 BI、長期監控資料庫持久化（可選）。</li>
+          </ul>
+          <h2>5. 功能需求（Functional）</h2>
+          <ul>
+            <li>F1 前台查詢頁：表單（Job No./Tracking No.）。</li>
+            <li>F2 時間軸模組：依資料呈現 Excuted/Processing/Pending；支援 Domestic, Import/Export/Cross 樣式分歧；特殊事件 Dry Ice Refilled (Terminal)、Dry Ice Refilled。</li>
+            <li>F3 後端 API（可選）：
+              <ul>
+                <li>GET /api/tracking?orderNo&trackingNo：提供已填入參數的查貨連結，使用者點擊即可查詢。</li>
+                <li>GET /api/health：健康檢查。</li>
+                <li>GET /api/monitoring/Admin：監控統計與最近請求。</li>
+              </ul>
+            </li>
+            <li>F4 資料來源：Airtable（Tracking 表單），若無資料回傳 404。</li>
+            <li>F5 安全與限流：API key（可選）與 IP-based rate limit；CORS 設定。</li>
+            <li>F6 部署與網域：Netlify Pro，透過 redirects 與 netlify.toml 管理路由。</li>
+          </ul>
+          <h2>6. 非功能需求（NFR）</h2>
+          <ul>
+            <li>可用性：P95 回應 < 1.5s（Airtable 正常時）。</li>
+            <li>可維運性：環境變數管理、日誌可追蹤 requestId/IP。</li>
+            <li>可擴充性：時間軸節點可擴增；支援更多運輸型別。</li>
+            <li>安全性：CORS 白名單、API Key 驗證（如開啟）、不回傳敏感欄位。</li>
+            <li>可測試性：Staging 與 Production；接口以例外/404 區分。</li>
+          </ul>
+          <h2>7. 業務規則（BR）</h2>
+          <ul>
+            <li>BR1：以 Airtable Tracking 表中欄位為單一真實來源（SSOT）。</li>
+            <li>BR2：若 A 階段時間存在即為 Excuted，下一未填階段為 Processing，再往後為 Pending。</li>
+            <li>BR3：
+              <ul>
+                <li>Dry Ice Refilled (Terminal)：僅在 In Transit 之後且事件為 Yes/True 才顯示。</li>
+                <li>Dry Ice Refilled：僅在 Destination Customs Process 之後且事件為 Yes/True 才顯示。</li>
+              </ul>
+            </li>
+            <li>BR4：查無資料即回 404；Airtable 失效時回 500 並記錄錯誤。</li>
+          </ul>
+          <h2>8. 介面與規格摘要</h2>
+          <ul>
+            <li>前端：Pug + Stylus（RWD），URL 支援 ?orderNo=XXXXXX & trackingNo=XXXXXX（可選）。</li>
+            <li>後端：Netlify Functions（Node），單入口 routing。</li>
+            <li>資料：Airtable REST SDK。</li>
+            <li>監控（可選）：/api/monitoring/stats + Admin 頁（Chart.js）。</li>
+          </ul>
+          <h2>9. 驗收條件（UAT）</h2>
+          <ul>
+            <li>依 3 組以上有效資料可正確呈現兩種樣式時間軸與事件節點。</li>
+            <li>API 正確回 200/404/429/500 各場景。
+              <ul>
+                <li>200：請求成功。</li>
+                <li>404：查無資料。</li>
+                <li>429：查詢過於頻繁。</li>
+                <li>500：內部伺服器錯誤。</li>
+              </ul>
+            </li>
+            <li>網域可用、redirects 與 netlify.toml 路由生效。</li>
+            <li>監控頁（可選）可顯示今日/月累計、平均回應、成功率、最近 20 筆請求。</li>
+          </ul>
+          <h2>10. 上線與維運</h2>
+          <ul>
+            <li>部署：GitHub → Netlify 自動部署；Staging → Production。</li>
+            <li>環境變數：AIRTABLE_API_KEY / BASE_ID / TABLE / API_KEY_xxx。</li>
+            <li>監控：Netlify logs + Admin 監控頁（可選）。</li>
+            <li>備援：Airtable 異常回退 500。</li>
+          </ul>
+        </section>
+        <footer class="doc-hint"></footer>
+      </section>
+    </main>
+  </body>
+</html>
